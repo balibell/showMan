@@ -1,0 +1,9 @@
+numpy
+pandas
+pillow
+onnxruntime
+
+# win系统适用，含 win32clipboard win32con
+pywin32
+# mac系统适用，含 AppKit
+pyobjc

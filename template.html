@@ -1,0 +1,1683 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>展示文件</title>
+    <style>
+      input, select {
+        height: 30px;
+        font-size: 14px;
+      }
+      .content {
+        margin-left: 60px;
+        display: grid;
+        grid-template-columns: repeat(4, 300px);
+        grid-template-rows: repeat(auto-fill, auto);
+        gap: 20px;
+      }
+      .data-item {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 300px;
+      }
+      .prev:hover {
+        cursor: pointer;
+        background-color: aquamarine;
+      }
+      .next:hover {
+        cursor: pointer;
+        background-color: aquamarine;
+      }
+      .pagination {
+        margin: 60px;
+        font-size: 18px;
+      }
+
+      .model-singleclked {
+        box-shadow: 10px 10px 5px red;
+      }
+      
+      .model-doubleclked {
+        box-shadow: 10px 10px 5px green;
+      }
+
+      #filter {
+        position: fixed;
+        width: 320px;
+        height: 60px;
+        bottom: 20px; 
+        right: 0;
+      }
+
+      #filter .filter-short-btn:link, #filter .filter-short-btn:visited {
+        position: absolute;
+        width: 40px;
+        left: auto;
+        right: 34px;
+        width: 20px;
+        height: 20px;
+        overflow: hidden;
+        line-height: 21px;
+        font-size: 12px;
+        border: 0px none;
+        border-radius: 10px;
+        cursor: pointer;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+      }
+      #filter .filter-short-btn:hover {
+        text-decoration: none;
+      }
+
+      #filter #filter-selected {
+        top: 0px;
+        background: green;
+      }
+      #filter #filter-deleted {
+        top: 20px;
+        background: red;
+      }
+      #filter #filter-reset {
+        top: 10px;
+        right: 14px;
+        background: pink;
+      }
+
+
+      #total-result {
+        position: fixed;
+        width: 100px;
+        height: 30px;
+        bottom: 0;
+        right: 0;
+      }
+
+      #total-result {
+        position: fixed;
+        width: 100px;
+        height: 30px;
+        bottom: 0;
+        right: 0;
+      }
+
+      #win-result {
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 550px;
+        background-color: white;
+        box-shadow: 10px 10px 5px #888888;
+        display: none;
+      }
+
+      #win-result .control-area {
+        position: absolute;
+        top: 10px;
+        left: auto;
+        right: 10px;
+      }
+
+      #win-result-close {
+        margin-left:100px;
+      }
+
+      #win-result textarea {
+        width: 90%;
+        height: 130px;
+        border: 1px solid #666;
+      }
+
+      /* images */
+      .data-images {
+        position: relative;
+        overflow: hidden;
+      }
+      .data-images img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+
+      
+      .data-images .view-large:link, .data-images .view-large:visited {
+        display: none;
+        position: absolute;
+        bottom: 24px;
+        right: 24px;
+        width: 32px;
+        height: 32px;
+        z-index: 999;
+        cursor: pointer;
+        background: url("https://c-ssl.dtstatic.com/uploads/people/201208/14/20120814104751_NMKMe.png") no-repeat;
+      }
+      .data-images .view-large:hover {
+        background: url("https://c-ssl.dtstatic.com/uploads/files/201208/13/20120813212753_kARhR.png") no-repeat;
+      }
+
+      .data-images:hover .view-large {
+        display: block !important;
+      }
+
+      .data-images .crop-drag {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+      }
+
+      .data-images .crop-drag1 {
+        top: 0;
+        left: 0;
+        right: auto;
+        background: rgba(0, 255, 0, 0.3);
+      }
+      
+      .data-images .crop-drag2 {
+        top: 0;
+        right: 0;
+        left: auto;
+        cursor: default;
+        background: rgba(0, 0, 255, 0.3);
+      }
+
+      .data-images .crop-drag1 span {
+        display: none;
+        position: absolute;
+        left: auto;
+        top: auto;
+        right: 0;
+        bottom: 0;
+        width: 10px;
+        height: 10px;
+        border: 1px solid red;
+        cursor: row-resize;
+      }
+
+      .data-bottom {
+        padding-bottom: 20px;
+      }
+
+      /* desc */
+      .data-desc {
+        margin: 20px 0 0;
+      }
+
+
+      /* prompt */
+      .data-prompt {
+        margin-top: 40px;
+        word-wrap:normal;
+        word-break:keep-all;
+      }
+      .data-prompt a:link, .data-prompt a:visited {
+        text-decoration: none;
+      }
+      .data-prompt a:hover {
+        text-decoration: underline;
+      }
+      .data-prompt a.cur:link, .data-prompt a.cur:visited {
+        color: red;
+      }
+      .data-prompt a.prev:link, .data-prompt a.prev:visited {
+        color: brown;
+      }
+
+      .data-prompt a.todel:link, .data-prompt a.todel:visited {
+        color: pink;
+      }
+
+      /* box-label */
+      #box-label-modify {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+      #box-label-modify .box-content {
+        position: relative;
+        width: 300px;
+        padding: 10px 20px 20px;
+        background-color: #fff;
+        box-shadow: 0 0 15px #ccc;
+      }
+      #box-label-modify .close-btn:link, #box-label-modify .close-btn:visited {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 46px;
+        height: 46px;
+        text-indent: -9999px;
+        background-image: url(https://c-ssl.dtstatic.com/uploads/people/201506/17/20150617215527_JyACa.png);
+        background-position: 15px 15px;
+        background-repeat: no-repeat;
+      }
+      #box-label-modify .close-btn:hover {
+        background-position: -17px -17px;
+      }
+      #box-label-modify .box-label-tip {
+        font-size: 14px;
+        color: grey
+      }
+
+      .box-title-focus-add .box-title-add {
+        color: red
+      }
+      .box-title-focus-edit .box-title-edit {
+        color: red
+      }
+
+      /* delete label */
+      #box-label-delete {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: white;
+        box-shadow: 0 0 15px #ccc;
+      }
+
+      /* short del */
+      #short-stat {
+        display: none;
+        position: fixed;
+        overflow: hidden;
+        width: 40px;
+        height: 20px;
+        top: 0;
+        left: auto;
+        right: 0;
+        line-height: 21px;
+        text-align: center;
+        color: grey;
+        border-radius: 10px;
+        border: 1px solid grey;
+        font-size: 12px;
+      }
+
+      /* short select all */
+      #short-select-all {
+        position: fixed;
+        overflow: hidden;
+        width: 80px;
+        height: 40px;
+        top: 0;
+        left: 0;
+      }
+      #short-select-all label {
+        float: left;
+        margin: 6px 0 0 4px;
+        line-height: 21px;
+        font-size: 14px;
+        user-select: none;
+      }
+      #short-select-all-checkbox {
+        float: left;
+      }
+
+
+      /* back to top */
+      #dt-index-backtotop {
+        position: fixed;
+        width: 46px;
+        height: 46px;
+        right: 10px;
+        bottom: 90px;
+        text-indent: -99999px;
+        background: url(https://c-ssl.dtstatic.com/uploads/item/201805/11/20180511104226_xfXsH.png);
+        background-size: 20px 27px;
+        background-color: #fff;
+        background-position: center center;
+        background-repeat: no-repeat;
+        border: 1px solid #e0e0e0;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="main-content" class="content"></div>
+    <div class="pagination">
+      <span class="current-page">当前页:</span>
+      <span class="total-page">总页数:</span>
+      <span class="total-item">图片总数:</span>
+      <div style="margin-top: 20px;"><form id="form-jump-page" onsubmit="onSubmitJump()">跳转到&nbsp;&nbsp;<input id="jump-page" /></form></div>
+      <div style="margin-top:60px;">
+        <span class="prev">上一页</span>
+        <span class="next">下一页</span>
+      </div>
+
+      <button id="total-result">导出</button>
+      <a id="dt-index-backtotop" href="javascript:;">回到顶部</a>
+
+      <div id="filter">
+        <form id="filter-form" target="_self" onsubmit="submitFilterImageList(event)">
+          <select name="filter" id="filter-options">
+            <option selected value="label">标签匹配</option>
+            <option selected value="label_part">标签包含</option>
+            <option value="label_v">标签反匹配</option>
+            <option value="label_part_v">标签反包含</option>
+            <option value="bottom_pixel">像素&gt;</option>
+            <option value="equal_pixel">像素=</option>
+            <option value="top_pixel">像素&lt;</option>
+            <option value="bottom_ratio">比例&gt;</option>
+            <option value="equal_ratio">比例=</option>
+            <option value="top_ratio">比例&lt;</option>
+            <option value="filter_selected">选中的</option>
+            <option value="filter_deleted">屏蔽的</option>
+          </select>
+          
+          <a id="filter-selected" class="filter-short-btn" href="javascript:;">0</a>
+          <a id="filter-deleted" class="filter-short-btn" href="javascript:;">0</a>
+          <a id="filter-reset" class="filter-short-btn" href="javascript:;"></a>
+
+          <input id="filter-input" placeholder="填写单个标签" value="" onkeydown="checkFilterInput(event)" />
+        </form>
+      </div>
+    </div>
+
+
+    <div id="win-result">
+      <h3>编辑的</h3>
+      <div>
+        <textarea id="win-result-tc"></textarea>
+      </div>
+      <h3>屏蔽的</h3>
+      <div>
+        <textarea id="win-result-ta"></textarea>
+      </div>
+      <h3>选中的</h3>
+      <textarea id="win-result-tb"></textarea>
+
+      <div class="control-area">
+        <button id="win-result-storage-sync" onclick="syncChanged()">同步</button>
+        <button id="win-result-storage-remove" onclick="clearAllStorage()">清除</button>
+        <button id="win-result-close" onclick="closeshow()">关闭</button>
+      </div>
+    </div>
+
+    <div id="box-label-modify">
+      <div class="box-content">
+        <h3 id="box-title"><span class="box-title-edit">编辑</span>/<span class="box-title-add">新增</span></h3>
+        <div>
+          <form id="box-label-form" target="_self" onsubmit="doModifyOrAddLabel(event)">
+            <input id="box-label-input" placeholder="多个标签逗号分隔" value="" onkeydown="checkFilterInput(event)"/>
+            <span class="box-label-tip">填写完回车即可</span>
+          </form>
+        </div>
+        
+        <a class="close-btn" href="javascript:;">关闭</a>
+      </div>
+    </div>
+
+
+    <div id="box-label-delete" onmouseleave="onLabelLeave(event)" onmouseover="onDeletePopHover(event)">
+      <button class="delete-btn" onclick="doDeleteLabel()">删除</button>
+    </div>
+
+    <div id="short-stat">Del</div>
+    <div id="short-select-all"><input type="checkbox" id="short-select-all-checkbox" onclick="onSelectAllStateChange(event)"/><label for="short-select-all-checkbox">全选</label></div>
+  </body>
+  <script src="https://a.dtstatic.com/static/cms/js/jquery.min.js"></script>
+  <script>
+    const listJson = '';
+    const limit = 100;
+    const PROPMTS_ARR = 'prompts_arr'
+    const CROP_ARR_1 = 'crop_arr_1'
+    const CROP_ARR_2 = 'crop_arr_2'
+    const KEY_PARAM_TYPE = 'type'
+    const KEY_PARAM_VALUE = 'value'
+    const STATE_STRS = ['', 'Del', 'Sec', 'Thd']
+
+    var inputParamArr = [];
+    var shortState = parseInt(localStorage.getItem('shortState')) || 0
+    var labelHoverTimer = null
+    var $toBeDeleteLabel = null
+    var $targetEditLabel = null
+    var isResize = false
+    var isMove = false
+    var $targetBox = null
+    var cropSaveTimer = null
+
+    let page = 0;
+    let singleclicked = getSingleClickedArr()
+    let doubleclicked = []
+    let paginationList = [];
+
+
+    function init(pageFromZero) {
+      toggleShortState(shortState)
+
+      let modifymap = getModifyMap()
+
+      paginationList = []
+      if (listJson) {
+        // 先执行过滤
+        let filtedList = []
+        for (let item of listJson) {
+          let modifyItem = modifymap[item.file_name]
+          if (modifyItem) {
+            let modifyPromptsArr = modifyItem[PROPMTS_ARR]
+            if (modifyPromptsArr && modifyPromptsArr.length > 0) {
+              item.prompts_arr = modifyPromptsArr
+            }
+
+            // crop_arr 挪到后面流程
+            // let cropArr1 = modifyItem[CROP_ARR_1]
+            // if (cropArr1) {
+            //   item.crop_arr_1 = cropArr1
+            // }
+            // let cropArr2 = modifyItem[CROP_ARR_2]
+            // if (cropArr2) {
+            //   item.crop_arr_2 = cropArr2
+            // }
+          }
+
+          let filters = []
+          for (let i=0; i<STATE_STRS.length - 1; i++) {
+            let param = getLabelParam(i)
+            if (param) {
+              filters.push(param)
+            }
+            if (shortState < 2) {
+              break;
+            }
+          }
+
+          let shouldSkip = false
+          for (let filter of filters) {
+            let filterSelect = filter[KEY_PARAM_TYPE]
+            let filterInput = filter[KEY_PARAM_VALUE]
+            if (filterSelect) {
+              if (filterInput) {
+                if (filterSelect == 'bottom_pixel' || filterSelect == 'top_pixel' || filterSelect == 'equal_pixel')  {
+                  let numArr = filterInput.split('x')
+                  if (numArr.length > 1) {
+                    let num1 = parseInt(numArr[0])
+                    let num2 = parseInt(numArr[1])
+                    if (num1 > 0 && num2 > 0) {
+                      if (filterSelect == 'bottom_pixel' && num1 * num2 >= item.image_width * item.image_height) {
+                        shouldSkip = true;
+                        break;
+                      } else if (filterSelect == 'top_pixel' && num1 * num2 <= item.image_width * item.image_height) {
+                        shouldSkip = true
+                        break;
+                      } else if (filterSelect == 'equal_pixel' && num1 * num2 != item.image_width * item.image_height) {
+                        shouldSkip = true
+                        break;
+                      }
+                    }
+                  }
+                } else if (filterSelect == 'bottom_ratio' || filterSelect == 'top_ratio' || filterSelect == 'equal_ratio') {
+                  let bottomRatio = parseFloat(filterInput)
+                  if (bottomRatio > 0 && item.image_height > 0) {
+                    let itemWHRatio = item.image_width / item.image_height
+                    if (filterSelect == 'bottom_ratio' && bottomRatio >= itemWHRatio) {
+                      shouldSkip = true
+                      break;
+                    } else if (filterSelect == 'top_ratio' && bottomRatio <= itemWHRatio) {
+                      shouldSkip = true
+                      break
+                    } else if (filterSelect == 'equal_ratio' && (bottomRatio + 0.01 < itemWHRatio || itemWHRatio < bottomRatio - 0.01)) {
+                      shouldSkip = true
+                      break
+                    }
+                  }
+                } else if (isLabel(filterSelect)) {
+                  let label = filterInput.trim();
+                  if (filterSelect == 'label_part' && label && !fuzzyMatchLabelInArray(item.prompts_arr, label)) {
+                    shouldSkip = true
+                    break;
+                  } else if (filterSelect === 'label_part_v' && fuzzyMatchLabelInArray(item.prompts_arr, label)) {
+                    shouldSkip = true
+                    break;
+                  } else if (filterSelect == 'label' && label && !fullMatchLabelInArray(item.prompts_arr, label)) {
+                    shouldSkip = true
+                    break;
+                  } else if (filterSelect === 'label_v' && fullMatchLabelInArray(item.prompts_arr, label)) {
+                    shouldSkip = true
+                    break;
+                  }
+                  
+                }
+
+                // 正常筛选结果里，不展示屏蔽的 item
+                if (singleclicked.indexOf(item.file_name) > -1) {
+                  shouldSkip = true
+                  break;
+                }
+              } else if (filterSelect == 'filter_deleted') {
+                if (singleclicked.indexOf(item.file_name) == -1) {
+                  shouldSkip = true
+                  break
+                }
+              } else if (filterSelect == 'filter_selected') {
+                if (doubleclicked.indexOf(item.file_name) == -1) {
+                  shouldSkip = true
+                  break
+                }
+              }
+            }
+          }
+
+          if (shouldSkip) {
+            continue
+          }
+          
+          filtedList.push(item)
+        }
+
+
+        // 排序，选中的排前面，屏蔽的排最后
+        filtedList.sort(function (a, b) {
+          if (doubleclicked.indexOf(a.file_name) > -1) {
+            return -1
+          } else if (singleclicked.indexOf(b.file_name) > -1) {
+            return 0
+          } else if (singleclicked.indexOf(a.file_name) > -1) {
+            return 1
+          } else if (doubleclicked.indexOf(b.file_name) > -1) {
+            return 1
+          } else if (a.mtime && b.mtime) {
+            if (a.mtime > b.mtime) {
+              return 1
+            } else if (a.mtime < b.mtime) {
+              return -1
+            } else {
+              return 0
+            }
+          } else {
+            let whRatioA = a.image_width / (a.image_height || 1)
+            let whRatioB = b.image_width / (b.image_height || 1)
+            if (whRatioA < whRatioB) {
+              return 1
+            } else if (whRatioA > whRatioB) {
+              return -1
+            } else {
+              let resa = a.image_width * a.image_height
+              let resb = b.image_width * b.image_height
+              if (resa < resb) {
+                return 1
+              } else if (resa > resb) {
+                return -1
+              } else {
+                return 0
+              }
+            }
+          }
+        })
+
+
+        let totalImageNum = filtedList.length
+
+        while (filtedList.length > 0) {
+          const onePageList = [];
+          for (let i = 0; i < limit; i++) {
+            if (filtedList[0]) {
+              const data = filtedList.splice(0, 1);
+              onePageList.push(data[0]);
+            } else {
+              break;
+            }
+          }
+          paginationList.push(onePageList);
+        }
+
+        // 展示第一页
+        showHashPage(pageFromZero);
+        window.scrollTo(0, 0);
+
+        $(".total-page").text(`总页数:${paginationList.length}`);
+        $(".total-item").text(`图片总数:${totalImageNum}`);
+      }
+    }
+    init(getPageNumFromHash())
+
+
+    $(".prev").on("click", function () {
+      if (page <= 0) {
+        return;
+      }
+      page--;
+      showHashPage(page);
+      window.scrollTo(0, 0);
+
+    });
+
+    $(".next").on("click", function () {
+      if (page >= paginationList.length - 1) {
+        return;
+      }
+      page++;
+      showHashPage(page);
+      window.scrollTo(0, 0);
+    });
+
+
+
+    $(window).on('hashchange', function(e) {
+      console.log('hash changed -=--' + location.hash);
+      let pageNumFromZero = getPageNumFromHash()
+      doShowPageContent(pageNumFromZero)
+    });
+
+    // 完整匹配
+    function fullMatchLabelInArray(arr, label) {
+      for (let item of arr) {
+        if (item == label) {
+          return true
+        }
+      }
+      return false
+    }
+
+    // 模糊匹配
+    function fuzzyMatchLabelInArray(arr, label) {
+      for (let item of arr) {
+        if (item.indexOf(label) > -1) {
+          return true
+        }
+      }
+      return false
+    }
+
+    function getPageNumFromHash() {
+      let pageNumFromZero = 0
+      if (location.hash.indexOf('page') > -1) {
+        let sp = location.hash.split('page')
+        if (sp.length > 1) {
+          pageNumFromZero = Math.max(parseInt(sp[1]) - 1, 0)
+        }
+      }
+      return pageNumFromZero
+    }
+
+    function doShowPageContent(pageNumFromZero) {
+      page = pageNumFromZero
+      const list = paginationList[page];
+      const $content = $(".content");
+      if (list) {
+        let modifymap = getModifyMap()
+        for (let item of list) {
+          let modifyItem = modifymap[item.file_name]
+          if (modifyItem) {
+            let modifyPromptsArr = modifyItem[PROPMTS_ARR]
+            if (modifyPromptsArr && modifyPromptsArr.length > 0) {
+              item.prompts_arr = modifyPromptsArr
+            }
+
+            let cropArr1 = modifyItem[CROP_ARR_1]
+            if (cropArr1) {
+              item.crop_arr_1 = cropArr1
+            }
+            let cropArr2 = modifyItem[CROP_ARR_2]
+            if (cropArr2) {
+              item.crop_arr_2 = cropArr2
+            }
+          }
+        }
+        
+        
+        const html = list.reduce((res, item) => res + renderItem(item), "");
+        $content.html(html);
+        $(".current-page").text(`当前页:${page + 1}`);
+      } else {
+        $content.html('');
+      }
+    }
+
+    function onSubmitJump() {
+      const inputPageNum = parseInt($("#jump-page").val()) || 1;
+      showHashPage(inputPageNum - 1);
+      window.scrollTo(0, 0);
+    }
+
+    function showHashPage(pageFromZero) {
+      let hashPageNum = getPageNumFromHash()
+      if (hashPageNum != pageFromZero) {
+        window.location.hash = '#page' + (pageFromZero + 1);
+      } else {
+        doShowPageContent(pageFromZero)
+      }
+    }
+  
+    function dtImageTrans(url, t, w, h, c) {
+      if (!url) {
+        return url;
+      }
+
+      var thumbnail = url;
+
+      if (t) {
+        w = w || 0;
+        h = h || 0;
+        // 新增图片尺寸规则
+        var scale = 1,
+            tempWidth = w;
+        var widthArray = [0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000];
+        var length = widthArray.length;
+        if (tempWidth > 0) {
+          for (var i = 0; i < length - 1; i++) {
+            if (widthArray[i] < tempWidth && tempWidth <= widthArray[i + 1] || i + 1 === length - 1) {
+              tempWidth = widthArray[i + 1];
+              break;
+            }
+          }
+        }
+        if (w > 0 && h == 0) {
+          w = tempWidth * scale;
+        } else if (w > 0 && h > 0) {
+          var rate = h / w;
+          w = tempWidth * scale;
+          // 宽高不同容易出现小数
+          h = parseInt(w * rate);
+        }
+        // 不符合宽度高度范围，还是原尺寸
+        // h为0时，url不带'_c'
+        c = c && h !== 0 ? '_' + c : '';
+        thumbnail = dtImageTrans(url).replace(/(\.[a-z_]+)$/ig, '.thumb.' + w + '_' + h + c + '$1');
+      } else {
+        thumbnail = url.replace(/(?:\.thumb\.\w+|\.[a-z]+!\w+)(\.[a-z_]+)$/ig, '$1').replace(/_webp$/i, '');
+      }
+
+      return thumbnail;
+    };
+
+    function renderItem(data) {
+      const { file_name, image_url1, image_url2, image_width, image_height, prompts_arr, prompts, img_dir, crop_arr_1, crop_arr_2 } = data;
+      let imageWd = 300
+      let imageHt = imageWd * (image_height / image_width)
+
+      // 图片区域
+      let imageHtml = img_dir ? `<img src="${img_dir}/${file_name}" />` : `<img src="${dtImageTrans(image_url1, true, 600)}" /><img src="${dtImageTrans(image_url2, true, 600)}" />`
+
+
+
+      // 提词区域
+      let promptHtml = ''
+      for (let prompt of prompts_arr) {
+        let filterInput = getCurrentLabelParamValue()
+        let promptClass = prompt == filterInput ? 'cur' : shortState > 1 && isPromptMeetPrevious(prompt) ? 'prev' : ''
+        promptHtml += `<a href="javascript:;" class="${promptClass}" onclick="onLabelClick(event)" onmouseleave="onLabelLeave(event)" onmouseover="onLabelHover(event)">${prompt}</a><span>, </span>`
+      }
+
+      promptHtml += '<a class="prompt-add-btn" href="javascript:;" onclick="onAddLabelClick(event)">╋</a>'
+
+      // 选中状态 className
+      let dataClass = ''
+      if (singleclicked.indexOf(file_name) > -1) {
+        dataClass = 'model-singleclked'
+      } else if (doubleclicked.indexOf(file_name) > -1) {
+        dataClass = 'model-doubleclked'
+      }
+
+
+      // crop 样式
+      let cropratio = imageWd / image_width 
+      let cropstyle1 = ''
+      let cropspanstyle1 = ''
+      if (crop_arr_1) {
+        cropstyle1 = `style="left:${cropratio * crop_arr_1[0]}px; top:${cropratio * crop_arr_1[1]}px; width:${cropratio * crop_arr_1[2]}px; height:${cropratio * crop_arr_1[3]}px"`
+        cropspanstyle1 = `style="display:block;"`
+      }
+    
+      let cropstyle2 = ''
+      if (crop_arr_2) {
+        cropstyle2 = `style="left:${cropratio * crop_arr_2[0]}px; top:${cropratio * crop_arr_2[1]}px; width:${cropratio * crop_arr_2[2]}px; height:${cropratio * crop_arr_2[3]}px"`
+      }
+
+      const html = `
+              <div class="data-item ${dataClass}" filename="${file_name}" showwidth="${imageWd}" showheight="${imageHt}" originwidth="${image_width}" originheight="${image_height}" onclick="switchState(event)">
+                <div class="data-images" style="width:${imageWd}px; height:${imageHt}px;">
+                  ${imageHtml}
+                  <div class="crop-drag crop-drag1" ${cropstyle1} onclick="preventClick(event)"><span ${cropspanstyle1}></span></div>
+                  <div class="crop-drag crop-drag2" ${cropstyle2} onclick="preventClick(event)"></div>
+                </div>
+                <div class="data-bottom">
+                  <div class="data-desc">${file_name} (${image_width}x${image_height})</div>
+                  <div class="data-prompt" onclick="preventClick(event)">${promptHtml}</div>
+                  <button class="copy-button">复制</button>
+                </div>
+              </div>
+            `;
+      return html;
+    }
+
+
+    // 点击
+    $(document).on('click', '.data-images .crop-drag', function (event) {
+      event.stopPropagation()
+    })
+
+    // 双击还原初始状态
+    $(document).on('dblclick', '.data-images .crop-drag', function (event) {
+      console.log('this is dbl click')
+      var $t = $(event.target)
+      if ($t.hasClass('crop-drag')) {
+        $t.css({
+          'width': 100,
+          'height': 100
+        })
+
+        if ($t.hasClass('crop-drag2')) {
+          $t.css({
+            'left': 'auto',
+            'right': 0,
+            'top': 0
+          })
+        } else if ($t.hasClass('crop-drag1')) {
+          $t.css({
+            'right': 'auto',
+            'left': 0,
+            'top': 0
+          })
+
+          $('.crop-drag1 span').hide()
+        }
+      }
+    })
+
+
+    // 拖拽
+    $(document).on('mousedown', '.data-images .crop-drag', function (event) {
+      var $t = $(event.target).closest('.crop-drag')
+      $targetBox = $t
+      var $p = $t.parent()
+      var pwidth = $p.width()
+      var pheight = $p.height()
+
+      // 鼠标相对于窗口的坐标
+      var x = event.pageX;
+      var y = event.pageY;
+
+      var outboxx = $t.offset().left
+      var outboxy = $t.offset().top
+
+      var min = Math.min(pwidth, pheight)
+      var coverWidth = min
+      var coverHeight = min
+
+      if ($t.hasClass('crop-drag1')) {
+        var tw = $t.width()
+        var th = $t.height()
+        var hasResized = tw > 100 && th > 100
+        var cresize = 'default'
+        var hwRatio11 = 1
+        var hwRatio32 = 3 / 2
+        if (!hasResized && pheight / pwidth > hwRatio32) {
+          // 细高的图
+          coverWidth = pwidth
+          coverHeight = pwidth * hwRatio32
+        } else if (!hasResized && pheight / pwidth > hwRatio11) {
+          coverHeight = pheight
+          coverWidth = pheight / hwRatio32
+        } else if (!hasResized && pheight / pwidth <= hwRatio11) {
+          // 默认方图
+        } else if (hasResized) {
+          coverWidth = tw
+          coverHeight = th
+        }
+
+        $t.find('span').show()
+        
+        var ctop = outboxy + coverHeight - y
+        var cleft = outboxx + coverWidth - x
+        if (0 < cleft && cleft < 10 && 0 < ctop && ctop < 10) {
+          // if (pheight / pwidth > hwRatio32) {
+          //   cresize = 'row-resize'
+          // } else {
+          //   cresize = 'row-resize'
+          // }
+          $t.css('cursor', 'row-resize')
+          isResize = true
+        }
+      }
+
+      $t.css({
+        'width': coverWidth,
+        'height': coverHeight,
+      })
+
+
+      // 指针相对于小盒子的偏移量,鼠标相对于窗口的坐标-小盒子相对于窗口的偏移量
+      var startx = event.pageX - $t.offset().left;
+      var starty = event.pageY - $t.offset().top;
+
+      // 鼠标移动事件
+      $(document).mousemove(function (eve) {
+        isMove = true
+        let $t = $targetBox
+        let $p = $t.parent()
+
+        // 鼠标相对于窗口的坐标
+        let x = eve.pageX;
+        let y = eve.pageY;
+
+        // 大盒子宽高、相对于窗口的偏移量
+        let wrapw = $p.width();
+        let wraph = $p.height();
+        let wrapx = $p.offset().left;
+        let wrapy = $p.offset().top;
+
+  
+        let boxw = $t.width();
+        let boxh = $t.height();
+        let boxx = $t.offset().left
+        let boxy = $t.offset().top
+
+        // 小盒子移动
+        let movex = x - startx - wrapx;
+        let movey = y - starty - wrapy;
+
+        let widthchange = x - startx - boxx
+        let heightchange = y - starty - boxy
+        // 临界值判断
+        // 小盒子不能超过大盒子左侧
+        if (movex < 0) {
+          movex = 0;
+        }
+        // 不能超过右侧
+        if (movex > wrapw - boxw) {
+          movex = wrapw - boxw;
+        }
+        // 不能超过上面
+        if (movey < 0) {
+          movey = 0;
+        }
+        // 不能超过下面
+        if (movey > wraph - boxh) {
+          movey = wraph - boxh;
+        }
+
+        // 移动效果，改变left和top值
+        if (isResize) {
+          let newwidth = coverWidth + widthchange
+          if (newwidth < 101) {
+            newwidth = 101
+          }
+          if (newwidth > wrapw - (boxx - wrapx)) {
+            newwidth = wrapw - (boxx - wrapx)
+          }
+
+          let newheight = coverHeight + heightchange
+          if (newheight < 101) {
+            newheight = 101
+          }
+          if (newheight > wraph - (boxy - wrapy)) {
+            newheight = wraph - (boxy - wrapy)
+          }
+
+          $t.css({
+            "left": boxx - wrapx,
+            "top": boxy - wrapy,
+            "width": newwidth,
+            "height": newheight
+          });
+        } else {
+          $t.css({
+            "left": movex,
+            "top": movey
+          });
+        }
+      });
+    });
+
+
+    // 复制内容
+    $(document).on('click', '.copy-button', function(e) {
+      e.preventDefault()
+      e.stopPropagation()
+      let $t = $(e.target)
+      var str = $t.closest('.data-bottom').find('.data-prompt').text().replaceAll('╋', '');
+      var $temp = $('<input>');
+      $('body').append($temp);
+      $temp.val(str).select();
+      document.execCommand('copy');
+      $temp.remove();
+    });
+
+
+    function updateCropInfo() {
+      if ($targetBox) {
+        console.log('----------------- updateCropInfo')
+        let boxw = $targetBox.width()
+        let boxh = $targetBox.height()
+        let $p = $targetBox.parent()
+        let boxleft = $targetBox.offset().left - $p.offset().left
+        let boxtop = $targetBox.offset().top - $p.offset().top
+
+        let $dataitem = $targetBox.closest('.data-item')
+        let fileName = $dataitem.attr('filename')
+        let originWidth = parseInt($dataitem.attr('originwidth'))
+        let originHeight = parseInt($dataitem.attr('originheight'))
+        let showWidth = parseInt($dataitem.attr('showwidth'))
+        let showHeight = parseInt($dataitem.attr('showheight'))
+
+
+        let ratio = originWidth / showWidth
+        let arr = [parseInt(ratio * boxleft), parseInt(ratio * boxtop), parseInt(ratio * boxw), parseInt(ratio * boxh)]
+        let modifymap = getModifyMap()
+        let modifyItem = modifymap[fileName] || {}
+        modifymap[fileName] = modifyItem
+
+        if ($targetBox.hasClass('crop-drag1')) {
+          if (boxw > 100 && boxh > 100) {
+            modifyItem[CROP_ARR_1] = arr
+          } else {
+            delete modifyItem[CROP_ARR_1]
+          }
+        } else if ($targetBox.hasClass('crop-drag2')) {
+          if (boxw > 100 && boxh > 100) {
+            modifyItem[CROP_ARR_2] = arr
+          } else {
+            delete modifyItem[CROP_ARR_2]
+          }
+        }
+        updateLocalStorageEditMap(modifymap)
+      }
+
+      $targetBox = null
+    }
+
+    // 鼠标松开时，小盒子不移动
+    $(document).mouseup(function (eve) {
+      // 使用off事件取消绑定事件
+      $(document).off("mousemove");
+
+      // 需要把移动的crop 记录下来
+      if (cropSaveTimer) {
+        window.clearTimeout(cropSaveTimer)
+      }
+      cropSaveTimer = window.setTimeout(updateCropInfo, 20)
+
+
+      isResize = false
+      isMove = false
+      $(".data-images .crop-drag").css('cursor', 'default')
+    });
+ 
+
+    // 切换筛选类型
+    $('#filter-options').change(function(e) {
+      doOnOptionsChanged(e)
+    })
+
+    function isLabel(v) {
+      return v == 'label' || v === 'label_v' || v === 'label_part'
+    }
+
+    function doOnOptionsChanged(e) {
+      let $inp = $('#filter-input')
+      let placeValue = ''
+      let sv = $('#filter-options').val()
+      let islb = isLabel(sv)
+      $inp.prop('disabled', false)
+      if (islb) {
+        placeValue = '填写单个标签'
+      } else if (sv == 'bottom_pixel' || sv == 'top_pixel' || sv == 'equal_pixel') {
+        placeValue = '示例: 512x512'
+      } else if (sv === 'bottom_ratio' || sv === 'top_ratio') {
+        placeValue = '示例: 0.666'
+      } else if (sv === 'filter_selected' || sv === 'filter_deleted') {
+        placeValue = ''
+        $inp.prop('disabled', true)
+      }
+
+      let theVal = ''
+      if (islb && inputParamArr.length) {
+        let param = inputParamArr[inputParamArr.length - 1]
+        let type = param[KEY_PARAM_TYPE]
+        if (isLabel(type)) {
+          theVal = param[KEY_PARAM_VALUE] || ''
+        }
+      }
+      $inp.attr('placeholder', placeValue).val(theVal)
+    }
+
+    $('#filter-selected').click(function(e) {
+      $('#filter-options').val('filter_selected')
+      inputParamArr.splice(0, inputParamArr.length)
+      doOnOptionsChanged()
+      $('#filter-form').submit()
+    })
+    $('#filter-deleted').click(function(e) {
+      $('#filter-options').val('filter_deleted')
+      inputParamArr.splice(0, inputParamArr.length)
+      doOnOptionsChanged()
+      $('#filter-form').submit()
+    })
+    $('#filter-reset').click(function(e) {
+      $('#filter-options').val('label')
+      inputParamArr.splice(0, inputParamArr.length)
+      doOnOptionsChanged()
+      $('#filter-form').submit()
+    })
+
+    $('#box-label-modify .close-btn').click(function(e) {
+      $('#box-label-modify').hide()
+    })
+
+    function checkFilterInput(e) {
+      if (e.keyCode == 192) {
+        e.preventDefault()
+      }
+    }
+
+    function isAddLabelAction() {
+      return !!$($targetEditLabel).hasClass('prompt-add-btn')
+    }
+
+    function editItemInPageList(funCondition, onlyOne) {
+      let isAdd = isAddLabelAction()
+      let modVal = $('#box-label-input').val().trim().replaceAll('，',',')
+      let modSp = modVal.split(',').map(item => item.trim()).filter(item => item != '')
+
+      let modifymap = getModifyMap()
+      let itemNameArr = []
+      for (let pageList of paginationList) {
+        for (let item of pageList) {
+          if (funCondition(item)) {
+            if (isAdd && modSp.length) {
+              // 新增
+              item.prompts_arr = item.prompts_arr.concat(modSp)
+              itemNameArr.push(item.file_name)
+            } else if ($targetEditLabel) {
+              let idx = item.prompts_arr.indexOf($targetEditLabel.text())
+              if (idx > -1) {
+                if (modSp.length) {
+                  // 修改
+                  let size = item.prompts_arr.length
+                  let headArr = item.prompts_arr.slice(0, idx)
+                  let tailArr = []
+                  if (idx < size - 1) {
+                    tailArr = item.prompts_arr.slice(idx + 1, size)
+                  }
+                  item.prompts_arr = headArr.concat(modSp).concat(tailArr)
+                  itemNameArr.push(item.file_name)
+                } else {
+                  // 删除
+                  item.prompts_arr.splice(idx, 1)
+                  itemNameArr.push(item.file_name)
+                }
+              }
+            }
+
+            if (!modifymap[item.file_name]) {
+              modifymap[item.file_name] = {}
+            }
+            item.prompts_arr = [ ...new Set(item.prompts_arr) ]
+            let modifyItem = modifymap[item.file_name]
+            modifyItem[PROPMTS_ARR] = item.prompts_arr
+
+            if (onlyOne) {
+              break;
+            }
+          }
+        }
+      }
+
+      updateLocalStorageEditMap(modifymap)
+      return itemNameArr
+    }
+
+    function doModifyOrAddLabel(e) {
+      e.preventDefault()
+      e.stopPropagation()
+      $('#box-label-modify').hide()
+
+      let modifymap = getModifyMap()
+      if (shortState === 1) {
+        // 单个编辑、添加
+        editItemInPageList(function(item) {
+          let fileName = $targetEditLabel.closest('.data-item').attr('filename')
+          return fileName == item.file_name
+        }, true)
+      } else {
+        // 多个编辑、添加
+        // 记录做过操作的 item_name
+        let itemNameArr = editItemInPageList(function(item) {
+          return doubleclicked.indexOf(item.file_name) > -1
+        }, false)
+
+        for (let itemName of itemNameArr) {
+          doubleclicked = $.grep(doubleclicked, function(val, key) {
+            return val != itemName
+          })
+        }
+      }
+
+
+      
+
+      $targetEditLabel = null
+      showHashPage(page);
+    }
+
+    function syncChanged() {
+      let modifymap = getModifyMap()
+      let deleteArray = getSingleClickedArr()
+
+      let saveObj = {
+        "modifymap": modifymap,
+        "singleclicked": deleteArray
+      }
+      navigator.clipboard.writeText(JSON.stringify(saveObj))
+
+      clearAllStorage()
+
+      closeshow()
+    }
+
+    function clearAllStorage() {
+      localStorage.clear()
+      $('#win-result-ta').val('[]')
+      $('#win-result-tc').val('{}')
+      $('#win-result-tb').val('[]')
+    }
+
+    function showModifyPopbox($target) {
+      $targetEditLabel = $target // 可能是待编辑 label，也可能是新增按钮 prompt-add-btn
+      let isAdd = isAddLabelAction()
+      $('#box-title').attr('class', isAdd ? 'box-title-focus-add' : 'box-title-focus-edit')
+      
+      let $box = $('#box-label-modify')
+      let posY = $target.offset().top - $(window).scrollTop() - $box.height() - 40
+      let posX = $target.closest('.data-item').offset().left
+      $box.show().css('top', posY).css('left', posX)
+      $('#box-label-input').val('').focus()
+
+      hideDeletePopbox()
+      doubleSelect($target)
+    }
+
+    function hideDeletePopbox() {
+      $($toBeDeleteLabel).removeClass('todel')
+      $toBeDeleteLabel = null
+      $('#box-label-delete').hide()
+    }
+    function showDeletePopbox(e) {
+      let $target = $(e.target)
+      let x = e.pageX;
+      let y = e.pageY;
+      let $box = $('#box-label-delete')
+      let posY = $target.offset().top - $(window).scrollTop() - 30
+      let posX = x
+      $box.show().css('top', posY).css('left', posX)
+
+      $($toBeDeleteLabel).removeClass('todel')
+      $toBeDeleteLabel = $target.addClass('todel')
+    }
+
+    function doDeleteLabel() {
+      if ($toBeDeleteLabel) {
+        let labelTxt = $toBeDeleteLabel.text().trim()
+        let $p = $toBeDeleteLabel.closest('.data-item')
+        let fileName = $p.attr('filename')
+
+        let modifymap = getModifyMap()
+        for (let pageList of paginationList) {
+          for (let item of pageList) {
+            if (fileName === item.file_name) {
+              let idx = item.prompts_arr.indexOf(labelTxt)
+              if (idx > -1) {
+                item.prompts_arr.splice(idx, 1)
+              }
+
+              if (!modifymap[fileName]) {
+                modifymap[fileName] = {}
+              }
+              let modifyItem = modifymap[fileName]
+              modifyItem[PROPMTS_ARR] = item.prompts_arr
+
+              $toBeDeleteLabel.next().remove()
+              $toBeDeleteLabel.remove()
+              updateLocalStorageEditMap(modifymap)
+              hideDeletePopbox()
+              return
+            }
+          }
+        }
+      }
+    }
+
+    function onLabelLeave(e) {
+      if (shortState == 1) {
+        window.clearTimeout(labelHoverTimer)
+        labelHoverTimer = window.setTimeout(function() {
+          hideDeletePopbox()
+        }, 1000)
+      }
+    }
+
+    function onDeletePopHover() {
+      if (shortState == 1) {
+        window.clearTimeout(labelHoverTimer)
+      }
+    }
+
+    function onLabelHover(e) {
+      if (shortState == 1) {
+        let $target = $(e.target)
+        window.clearTimeout(labelHoverTimer)
+        labelHoverTimer = window.setTimeout(function() {
+          showDeletePopbox(e)
+        }, 300)
+      }
+    }
+
+    function onAddLabelClick(e) {
+      e.preventDefault()
+      e.stopPropagation()
+
+      let $t = $(e.target)
+      showModifyPopbox($t)
+    }
+
+    function getSingleClickedArr() {
+      let arr = []
+      let singleclickedMsg = localStorage.getItem('singleclicked')
+      if (singleclickedMsg) {
+        arr = JSON.parse(singleclickedMsg)
+      }
+      return arr
+    }
+
+    function getModifyMap() {
+      let modifymapMsg = localStorage.getItem('modifymap')
+      let modifymap = {}
+      if (modifymapMsg) {
+        modifymap = JSON.parse(modifymapMsg)
+      }
+      return modifymap
+    }
+
+    function onLabelClick(e) {
+      e.preventDefault()
+      e.stopPropagation()
+
+      let $t = $(e.target)
+      let newLabelVal = $t.text().trim()
+
+      if ($t.hasClass('cur') || $t.hasClass('prev')) {
+        if (CTRL && $t.hasClass('cur')) {
+          backParams()
+        } else {
+          showModifyPopbox($t)
+        }
+      } else {
+        let filterSelect = getCurrentLabelParamType()
+        if (!isLabel(filterSelect)) {
+          $('#filter-options').val('label')  
+        }
+        $('#filter-input').val(newLabelVal)
+        $('#filter-form').submit()
+        window.scrollTo(0, 0);
+      }
+    }
+
+    function backParams() {
+      let len = inputParamArr.length
+      inputParamArr = inputParamArr.slice(0, len - 1)
+      init(getPageNumFromHash())
+    }
+
+    function pushLabelParam(type, value) {
+      let curType = getCurrentLabelParamType()
+      let curValue = getCurrentLabelParamValue()
+      if (curType === type && curValue === value) {
+        return
+      }
+
+      let item = {}
+      item[KEY_PARAM_TYPE] = type
+      item[KEY_PARAM_VALUE] = value
+      inputParamArr.push(item)
+      let len = inputParamArr.length
+      let maxLen = STATE_STRS.length
+      if (len > maxLen) {
+        inputParamArr = inputParamArr.slice(len - maxLen, len)
+      }
+    }
+
+
+    function isPromptMeetPrevious(prompt) {
+      let meet = false
+      let num = STATE_STRS.length - 1
+      for (let i=1; i<num; i++) {
+        let param = getLabelParam(i)
+        if (param && param[KEY_PARAM_VALUE] === prompt) {
+          return true
+        }
+      }
+      return false;
+    }
+
+
+    function getCurrentLabelParamType() {
+      let type = ''
+      let param = getLabelParam(0)
+      if (param && param[KEY_PARAM_TYPE]) {
+        type = param[KEY_PARAM_TYPE]
+      }
+      return type
+    }
+
+    function getCurrentLabelParamValue() {
+      let param = getLabelParam(0)
+      return param ? param[KEY_PARAM_VALUE] : ''
+    }
+
+    function getLabelParam(idx) {
+      let param = null
+      let len = inputParamArr.length
+      if (len > idx) {
+        param = inputParamArr[len - 1 - idx]
+      }
+      return param
+    }
+
+    function submitFilterImageList(e) {
+      $('#box-label-modify').hide()
+      e.preventDefault();
+      e.stopPropagation();
+      let $input = $('#filter-input');
+      let inputVal = $input.val().trim()
+      let $select = $('#filter-options');
+      let selVal = $select.val()
+      pushLabelParam(selVal, inputVal)
+      console.log(`select is ${selVal};inputVal is ${inputVal}`)
+
+      init(0);
+    }
+
+
+    function preventClick(e) {
+      e.preventDefault()
+      e.stopPropagation()
+    }
+
+    function clearDoubleSelect($t) {
+      let $p = $t.closest('.data-item')
+      let uniq = $p.attr('filename')
+      $p.removeClass('model-doubleclked')
+      doubleclicked.removeByValue(uniq)
+      updateDoubleClicked(doubleclicked)
+      $('#filter-selected').html(doubleclicked.length)
+    }
+
+    function updateLocalStorageSingleClicked(singleclicked) {
+      localStorage.setItem('singleclicked', JSON.stringify(singleclicked))
+      $('#win-result-ta').val(JSON.stringify(singleclicked))
+    }
+
+    function updateLocalStorageEditMap(modifymap) {
+      localStorage.setItem('modifymap', JSON.stringify(modifymap))
+      $('#win-result-tc').val(JSON.stringify(modifymap))
+
+    }
+
+    function updateDoubleClicked(updateDoubleClicked) {
+      $('#win-result-tb').val(JSON.stringify(doubleclicked))
+    }
+
+    function clearSingleSelect($t) {
+      let $p = $t.closest('.data-item')
+      let uniq = $p.attr('filename')
+      $p.removeClass('model-singleclked')
+      singleclicked.removeByValue(uniq)
+      updateLocalStorageSingleClicked(singleclicked)
+      
+
+      $('#filter-deleted').html(singleclicked.length)
+    }
+
+    function doubleSelect($t) {
+      let $p = $t.closest('.data-item')
+      let uniq = $p.attr('filename')
+      $p.removeClass('model-singleclked')
+      $p.addClass('model-doubleclked')
+      singleclicked.removeByValue(uniq)
+      doubleclicked.push(uniq)
+      updateDoubleClicked(doubleclicked)
+      updateLocalStorageSingleClicked(singleclicked)
+
+      $('#filter-selected').html(doubleclicked.length)
+    }
+
+    function singleSelect($t) {
+      let $p = $t.closest('.data-item')
+      let uniq = $p.attr('filename')
+      $p.addClass('model-singleclked')
+      $p.removeClass('model-doubleclked')
+      singleclicked.push(uniq)
+      updateLocalStorageSingleClicked(singleclicked)
+
+      $('#filter-deleted').html(singleclicked.length)
+    }
+
+    function onSelectAllStateChange(event) {
+      let $t = $(event.target)
+
+      $('.data-item').each(function(idx, item) {
+        if ($t.prop('checked')) {
+          console.log('============is select all')
+          doubleSelect($(item))
+        } else {
+          console.log('============is unselect all')
+          clearDoubleSelect($(item))
+        }
+      })
+    }
+
+    // item 选中状态有两种，红色的屏蔽，绿色的选中
+    function switchState(e) {
+      var $t = $(e.target)
+      var $p = $t.closest('.data-item')
+      if ($p.hasClass('model-doubleclked')) {
+        clearDoubleSelect($p)
+        clearSingleSelect($p)
+      } else if ($p.hasClass('model-singleclked')) {
+        doubleSelect($p)
+      } else {
+        singleSelect($p)
+      }
+
+      $('#box-label-modify').hide()
+    }
+
+    $('#total-result').click(function() {
+      let $result = $('#win-result')
+      if($result.is(":hidden")) {
+        let modifymap = getModifyMap()
+
+        // 可能有些 item 只有 crop 信息，要补全 prompts
+        for (let pageList of paginationList) {
+          for (let item of pageList) {
+            if (modifymap[item.file_name]) {
+              let modifyItem = modifymap[item.file_name]
+              let modifyPromptsArr = modifyItem[PROPMTS_ARR]
+              if (!modifyPromptsArr || modifyPromptsArr.length <= 0) {
+                modifyItem[PROPMTS_ARR] = item.prompts_arr
+              }
+            }
+          }
+        }
+
+        $result.show()
+        $('#win-result-ta').val(JSON.stringify(singleclicked))
+        $('#win-result-tb').val(JSON.stringify(doubleclicked))
+        $('#win-result-tc').val(JSON.stringify(modifymap))
+      } else {
+        $result.hide()
+      }
+    })
+
+    function closeshow() {
+      $('#win-result').hide()
+    }
+
+
+    Array.prototype.removeByValue = function (val) {
+      for (var i = 0; i < this.length; i++) {
+        if (this[i] === val) {
+          this.splice(i, 1);
+          i--;
+        }
+      }
+      return this;
+    }
+
+    function toggleShortState(shortState) {
+      let statStr = STATE_STRS[shortState]
+      let $stat = $('#short-stat')
+      $stat.text(statStr)
+      if (shortState > 0) {
+        $stat.show()
+      } else {
+        $stat.hide()
+      }
+    }
+
+    // document keydown
+    let CTRL = false
+    $(document).keydown(function (event) {
+      console.log(event.keyCode)
+      if (event.keyCode === 91) {
+        CTRL = true
+      }
+    })
+
+    // document keyup
+    $(document).keyup(function (event) {
+      // console.log(event.keyCode)
+      if (event.keyCode === 192) {
+        shortState = (shortState + 1) % STATE_STRS.length
+
+        localStorage.setItem('shortState', shortState)
+
+        toggleShortState(shortState)
+       
+      } else if (event.keyCode === 91) {
+        CTRL = false
+      }
+    })
+
+
+    // 回到顶部
+    $('#dt-index-backtotop').click(function(e) {
+      e.preventDefault()
+      e.stopPropagation()
+      window.scrollTo(0, 0);
+    })
+
+
+
+    // document.onselectstart = function(){
+    //   return false;
+    // };
+  </script>
+</html>
+
