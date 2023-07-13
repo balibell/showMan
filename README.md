@@ -8,8 +8,9 @@ git
 ** 确保命令行 python 指向 python3 **
 
 
-** 要正常使用 sed -i 先要装 coreutils 然后装 gnu-sed **
-** 然后在 .zshrc 里写入 export PATH="$(brew --prefix)/opt/gnu-sed/libexec/gnubin:$PATH" **
+** 要正常使用 sed -i 先要装 coreutils 然后装 gnu-sed 
+然后在 .bashrc 或 .zshrc 里写入 export PATH="$(brew --prefix)/opt/gnu-sed/libexec/gnubin:$PATH" **
+
 `brew install gnu-sed`
   
 
