@@ -9,13 +9,13 @@ if [ "$1" = "" ]; then
 fi 
 
 
-instancedir=~/github/showMan/training/${instancename}
+instancedir=/home/admin/github/showMan/training/${instancename}
 if [ "$force" != "" ]; then
   rm -rf $instancedir
 fi
 
 if [ ! -d "$instancedir" ]; then
-  cp -r ~/github/showMan/training/template $instancedir
+  cp -r /home/admin/github/showMan/training/template $instancedir
 
   for file in ${instancedir}/*.toml; do 
     echo $file

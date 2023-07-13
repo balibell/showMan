@@ -19,7 +19,7 @@ ln -s ${prefix}/github/showMan/saled/${DIRNAME}/${SELECTED}_01_lv9 ${DIRNAME}_${
 
 
 current_path=`pwd`
-python ~/github/sd-scripts/finetune/merge_captions_to_metadata.py --full_path $current_path $current_path/data.json --caption_extension .txt
+python ${prefix}/github/sd-scripts/finetune/merge_captions_to_metadata.py --full_path $current_path $current_path/data.json --caption_extension .txt
 
 # 找出目录下空白的txt文件
 find ./ -type f -name "*.txt" -empty

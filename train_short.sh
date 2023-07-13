@@ -66,7 +66,7 @@ source ~/.zshrc
 node --version
 python --version
 conda activate dbtrain
-cd ~/github/showMan/
+cd /home/admin/github/showMan/
 git pull
 
 echo "$nohup sh training/start_train.sh $instancename $trainer $nohupsuf"
