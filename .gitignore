@@ -2,7 +2,6 @@ node_modules
 duplicate
 selected_*
 work_*.html
-images
 result
 *.log
 *.pyc
