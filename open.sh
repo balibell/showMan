@@ -48,7 +48,7 @@ if [ -d "$dir" ]; then
       echo "cp -r $dir/* $savedirnum"
       cp -r $dir/* $savedirnum
        # 上传到远端
-      scp -r $dir/* 45:/home/admin/github/showMan/$SAVED/${curdirname}/selected_${num}
+      scp -r $dir/* 44:/home/admin/github/showMan/$SAVED/${curdirname}/selected_${num}
 
       # 清空导入路径里的图片
       rm -rf $dir/*
@@ -57,7 +57,7 @@ if [ -d "$dir" ]; then
     mkdir -p $savedirnum
     cp -r $dir/* $savedirnum
 
-    ssh 45 << remotessh
+    ssh 44 << remotessh
     source ~/.zshrc
     node --version
     python --version
@@ -67,7 +67,7 @@ if [ -d "$dir" ]; then
     exit
 remotessh
     # 上传到远端
-    scp -r $dir/* 45:/home/admin/github/showMan/$SAVED/${curdirname}/selected_${num}
+    scp -r $dir/* 44:/home/admin/github/showMan/$SAVED/${curdirname}/selected_${num}
 
     # 清空导入路径里的图片
     rm -rf $dir/*
@@ -125,8 +125,8 @@ function handle_interrupt {
   # 检查 crop 文件变化
   for item in `cat confirmCropped.txt`; do 
     cropfile="$SAVED/${dir}/selected_${num}/$item"
-    echo "scp $cropfile 45:/home/admin/github/showMan/$SAVED/${dir}/selected_${num}/$item"
-    scp $cropfile 45:/home/admin/github/showMan/$SAVED/${dir}/selected_${num}/$item
+    echo "scp $cropfile 44:/home/admin/github/showMan/$SAVED/${dir}/selected_${num}/$item"
+    scp $cropfile 44:/home/admin/github/showMan/$SAVED/${dir}/selected_${num}/$item
     echo $item;
   done;
   cat /dev/null > confirmCropped.txt

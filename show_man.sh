@@ -46,7 +46,7 @@ fi
 if [ "$remote" = "remoteonly" ] || [ "$remote" = "all" ]; then
 echo 'do remote action'
 
-ssh 45 << remotessh
+ssh 44 << remotessh
 source ~/.zshrc
 node --version
 python --version
@@ -56,7 +56,7 @@ sh show_man.sh "$dotrim" $typedir $dir $num $mtimesort
 git checkout -- .
 exit
 remotessh
-echo "remote 45 done!"
+echo "remote 44 done!"
 
 fi
 

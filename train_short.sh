@@ -61,7 +61,7 @@ exit
 remotessh
 fi
 
-ssh 45 << remotessh
+ssh 44 << remotessh
 source ~/.zshrc
 node --version
 python --version

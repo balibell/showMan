@@ -14,4 +14,4 @@ sh tagger.sh 0 $SAVED $dir 01 0 0.45
 
 python pyutil/randomName.py ./$selected_dir 1
 
-scp -r $instance_dir 45://home/admin/github/showMan/$instance_dir
+scp -r $instance_dir 44://home/admin/github/showMan/$instance_dir

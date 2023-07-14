@@ -46,7 +46,7 @@ fi
 if [ "$remote" = "remoteonly" ] || [ "$remote" = "all" ]; then
 echo 'do remote action'
 
-ssh 45 << remotessh
+ssh 44 << remotessh
 source ~/.zshrc
 node --version
 python --version
@@ -55,17 +55,6 @@ git pull
 sh tagger.sh $doCopy $typedir $dir $num $level $threshold
 exit
 remotessh
-echo "remote 45 done!"
-
-# ssh 45 << remotessh
-# source ~/.zshrc
-# node --version
-# python --version
-# cd /home/admin/github/showMan
-# git pull
-# sh tagger.sh $doCopy $typedir $dir $num $level $threshold
-# exit
-# remotessh
-# echo "remote 44 done!"
+echo "remote 44 done!"
 fi
 

@@ -74,23 +74,23 @@ pip install pyobjc
 
 3. 训练服务器
 
-- 45训练服务器上搭建好 sd-scripts [地址](https://github.com/kohya-ss/sd-scripts) 训练环境，路径 /home/admin/github/sd-scripts
+- 44训练服务器上搭建好 sd-scripts [地址](https://github.com/kohya-ss/sd-scripts) 训练环境，路径 /home/admin/github/sd-scripts
 
-- 45训练服务器上搭建好 LyCORIS [地址](https://github.com/KohakuBlueleaf/LyCORIS) 训练环境，路径 /home/admin/github/LyCORIS
+- 44训练服务器上搭建好 LyCORIS [地址](https://github.com/KohakuBlueleaf/LyCORIS) 训练环境，路径 /home/admin/github/LyCORIS
 
-- 45训练服务器上装好TensorBoard，进入 /home/admin/github/showMan，执行 `tensorboard --logdir=training/log --bind_all --port=6006`
+- 44训练服务器上装好TensorBoard，进入 /home/admin/github/showMan，执行 `tensorboard --logdir=training/log --bind_all --port=6006`
 
-- 45训练服务器上监听 training/output 文件夹变化，进入 /home/admin/github/showMan，执行 `python pyutil/watchdog.py /home/admin/github/showMan/training/output`
+- 44训练服务器上监听 training/output 文件夹变化，进入 /home/admin/github/showMan，执行 `python pyutil/watchdog.py /home/admin/github/showMan/training/output`
 
-** 监听到新产出的模型文件会 scp 同步到 44生图服务器 **
+** 监听到新产出的模型文件会 scp 同步到 45生图服务器 **
 
 4. 生图服务器
 
-- 44生图服务器上搭建好 Stable Diffusion 生图环境
+- 45生图服务器上搭建好 Stable Diffusion 生图环境
 
-- 44生图服务器 checkpoint 训练产出模型目录设定为 /home/admin/models/train
+- 45生图服务器 checkpoint 训练产出模型目录设定为 /home/admin/models/train
 
-- 44生图服务器 lora 训练产出模型目录设定为 /home/admin/lora/train
+- 45生图服务器 lora 训练产出模型目录设定为 /home/admin/lora/train
 
 
 
@@ -183,9 +183,9 @@ Host 45
         Port 12000
 ```
 
-编号44服务器为生图服务器，训练过程会将模型文件 scp 同步到这台服务器上
+编号45服务器为生图服务器，训练过程会将模型文件 scp 同步到这台服务器上
 
-编号45服务器为训练服务器
+编号44服务器为训练服务器
 
 （访问这两台服务器，需要管理员给你权限）
 
