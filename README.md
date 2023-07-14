@@ -30,6 +30,15 @@ pip install pyobjc
 # node 依赖安装
 `npm install sharp`
 
+
+# 下载 tagger 模型文件
+
+用于给图片打标签，这个模型文件356M，可以去炼丹阁 [下载](https://www.liandange.com/models/10001285/detail/) 
+
+下载到（注意最终名字要是 model.onnx）
+
+./tagger/tagmodel/wd-v1-4-vit-tagger-v2/model.onnx
+
  
 
 # 如何使用？
