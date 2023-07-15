@@ -1,0 +1,41 @@
+pretrained_model_name_or_path = "/home/admin/models/models/anything-v4.5-pruned.safetensors"
+caption_extension = ".txt"
+resolution = "512,512"
+cache_latents = false
+output_dir = "/home/admin/github/showMan/training/output/ldh_db"
+output_name = "ldh"
+save_precision = "fp16"
+save_model_as = "safetensors"
+save_every_n_epochs = 5
+sample_every_n_epochs = 5
+train_batch_size = 3
+
+
+seed = 1234
+clip_skip = 2
+max_token_length = 225
+xformers = true
+max_train_epochs = 100
+persistent_data_loader_workers = true
+gradient_checkpointing = true
+gradient_accumulation_steps = 64
+mixed_precision = "fp16"
+logging_dir = "/home/admin/github/showMan/training/log/ldh_db"
+sample_prompts = "/home/admin/github/showMan/training/ldh/prompt.txt"
+sample_sampler = "euler_a"
+optimizer_type = "AdamW8bit"
+learning_rate = 2e-6
+lr_scheduler = "constant"
+lr_warmup_steps = 0
+lr_scheduler_num_cycles = 0
+dataset_config = "/home/admin/github/showMan/training/ldh/dataset_config.toml"
+unet_lr = 2e-6
+text_encoder_lr = 1e-6
+multires_noise_iterations = 6
+multires_noise_discount = 0.1
+stop_text_encoder_training = 100
+# network_module = "networks.lora"
+# network_dim = 128
+# network_alpha = 64
+
+
