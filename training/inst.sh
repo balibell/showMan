@@ -15,6 +15,7 @@ if [ "$force" != "" ]; then
 fi
 
 if [ ! -d "$instancedir" ]; then
+  echo "cp -r training/template $instancedir"
   cp -r training/template $instancedir
 
   for file in ${instancedir}/*.toml; do 

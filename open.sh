@@ -108,7 +108,9 @@ else
 fi
 
 # 创建训练目录
+echo "sh training/inst.sh $dir"
 sh training/inst.sh $dir
+echo "===================training dir created to check it training/$dir"
 
 
 
