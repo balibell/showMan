@@ -1,0 +1,172 @@
+[
+  {
+    "file_name": "230715_2p055pc6.jpg",
+    "img_dir": "selected_01",
+    "prompts_arr": [
+      "solo",
+      "shirt",
+      "black_hair",
+      "collared_shirt",
+      "white_shirt",
+      "upper_body",
+      "black_eyes",
+      "1girl",
+      "open_mouth",
+      "teeth",
+      "simple_background",
+      "blue_shirt",
+      "tongue",
+      "realistic"
+    ],
+    "mtime": 0
+  },
+  {
+    "file_name": "230715_5yJuIqNA.jpeg",
+    "img_dir": "selected_01",
+    "prompts_arr": [
+      "1boy",
+      "male_focus",
+      "solo",
+      "necktie",
+      "black_hair",
+      "uniform",
+      "shirt",
+      "looking_at_viewer",
+      "military",
+      "realistic",
+      "black_eyes",
+      "collared_shirt",
+      "upper_body",
+      "military_uniform",
+      "white_shirt",
+      "black_necktie",
+      "badge",
+      "short_hair"
+    ],
+    "mtime": 0
+  },
+  {
+    "file_name": "230715_Ckb9rHzc.jpg",
+    "img_dir": "selected_01",
+    "prompts_arr": [
+      "solo",
+      "male_focus",
+      "1boy",
+      "portrait",
+      "looking_at_viewer",
+      "realistic",
+      "black_eyes",
+      "blonde_hair",
+      "jacket",
+      "short_hair"
+    ],
+    "mtime": 0
+  },
+  {
+    "file_name": "230715_pjrmzdMD.jpg",
+    "img_dir": "selected_01",
+    "prompts_arr": [
+      "solo",
+      "blonde_hair",
+      "portrait",
+      "realistic",
+      "green_background",
+      "closed_mouth",
+      "male_focus",
+      "lips",
+      "looking_at_viewer",
+      "1boy",
+      "1girl",
+      "black_eyes"
+    ],
+    "mtime": 0
+  },
+  {
+    "file_name": "230715_u0a3SZeT.jpeg",
+    "img_dir": "selected_01",
+    "prompts_arr": [
+      "black_hair",
+      "1boy",
+      "male_focus",
+      "formal",
+      "shirt",
+      "realistic",
+      "black_eyes",
+      "necktie",
+      "looking_at_viewer",
+      "suit",
+      "white_shirt",
+      "solo",
+      "artist_name",
+      "signature",
+      "black_jacket",
+      "collared_shirt"
+    ],
+    "mtime": 0
+  },
+  {
+    "file_name": "230715_VkV5Bjlw.jpg",
+    "img_dir": "selected_01",
+    "prompts_arr": [
+      "1boy",
+      "male_focus",
+      "glasses",
+      "realistic",
+      "solo",
+      "necktie",
+      "uniform",
+      "black_hair",
+      "blurry_background",
+      "blurry",
+      "shirt",
+      "black_eyes",
+      "looking_at_viewer",
+      "military",
+      "blue_necktie"
+    ],
+    "mtime": 0
+  },
+  {
+    "file_name": "230715_wmNcuf4X.jpeg",
+    "img_dir": "selected_01",
+    "prompts_arr": [
+      "jewelry",
+      "black_hair",
+      "earrings",
+      "ring",
+      "multiple_boys",
+      "mask",
+      "2boys",
+      "blurry_background",
+      "black_eyes",
+      "short_hair",
+      "shirt",
+      "own_hands_together"
+    ],
+    "mtime": 0
+  },
+  {
+    "file_name": "230715_xBKrOzmp.jpeg",
+    "img_dir": "selected_01",
+    "prompts_arr": [
+      "solo",
+      "black_hair",
+      "shirt",
+      "1boy",
+      "realistic",
+      "male_focus",
+      "short_hair",
+      "looking_to_the_side",
+      "blurry",
+      "collared_shirt",
+      "lips",
+      "black_eyes",
+      "upper_body",
+      "blurry_background",
+      "necklace",
+      "looking_away",
+      "closed_mouth"
+    ],
+    "mtime": 0
+  }
+]
