@@ -4,9 +4,10 @@
     "img_dir": "selected_01",
     "prompts_arr": [
       "yellow_theme",
-      "leaf_pattern",
       "ginkgo",
-      "seamless_pattern"
+      "seamless_pattern",
+      "yellow",
+      "group_leaf"
     ],
     "mtime": 0
   },
@@ -15,9 +16,8 @@
     "img_dir": "selected_01",
     "prompts_arr": [
       "multi_leaf",
-      "blurry_background",
-      "outdoor",
-      "branch"
+      "branch",
+      "yellow"
     ],
     "mtime": 0
   },
@@ -27,12 +27,12 @@
     "prompts_arr": [
       "monochrome",
       "greyscale",
-      "leaf_pattern",
       "white_background",
       "simple_background",
       "drawing",
       "sketch",
-      "circle_pattern"
+      "circle_pattern",
+      "group_leaf"
     ],
     "mtime": 0
   },
@@ -40,10 +40,8 @@
     "file_name": "230718_aSCusI0X.png",
     "img_dir": "selected_01",
     "prompts_arr": [
-      "green_theme",
       "leaf_meridians",
-      "leaf_texture",
-      "texture_on_breasts_of_power_armor"
+      "green"
     ],
     "mtime": 0
   },
@@ -53,12 +51,12 @@
     "prompts_arr": [
       "monochrome",
       "greyscale",
-      "leaf_pattern",
       "simple_background",
       "white_background",
       "drawing",
       "sketch",
-      "aligned_pattern"
+      "aligned_pattern",
+      "group_leaf"
     ],
     "mtime": 0
   },
@@ -66,11 +64,11 @@
     "file_name": "230718_3qphgGbz.png",
     "img_dir": "selected_01",
     "prompts_arr": [
-      "leaf_pattern",
       "white_background",
       "simple_background",
-      "green_theme",
-      "aligned_pattern"
+      "aligned_pattern",
+      "green",
+      "group_leaf"
     ],
     "mtime": 0
   },
@@ -78,10 +76,8 @@
     "file_name": "230718_CxCFdHJr.png",
     "img_dir": "selected_01",
     "prompts_arr": [
-      "green_theme",
       "leaf_meridians",
-      "leaf_texture",
-      "texture_on_breasts_of_power_armor"
+      "green"
     ],
     "mtime": 0
   },
@@ -91,12 +87,12 @@
     "prompts_arr": [
       "monochrome",
       "greyscale",
-      "leaf_pattern",
       "simple_background",
       "white_background",
       "drawing",
       "sketch",
-      "aligned_pattern"
+      "aligned_pattern",
+      "group_leaf"
     ],
     "mtime": 0
   },
@@ -104,11 +100,10 @@
     "file_name": "230718_zzo1YZkF.jpeg",
     "img_dir": "selected_01",
     "prompts_arr": [
-      "green_theme",
       "leaf_meridians",
       "water",
       "thick",
-      "leaf_texture"
+      "green"
     ],
     "mtime": 0
   },
@@ -116,10 +111,8 @@
     "file_name": "230718_DOniLW6C.jpeg",
     "img_dir": "selected_01",
     "prompts_arr": [
-      "leaf",
       "autumn_leaf",
-      "maple_leaf",
-      "photo of leaf"
+      "red"
     ],
     "mtime": 0
   },
@@ -129,9 +122,8 @@
     "prompts_arr": [
       "white_background",
       "simple_background",
-      "leaf",
       "maple_leaf",
-      "photo of leaf"
+      "red"
     ],
     "mtime": 0
   }
