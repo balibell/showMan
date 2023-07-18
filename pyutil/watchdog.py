@@ -49,7 +49,7 @@ def do_copy_model(file):
   # 执行 scp 命令
   if 'network' in file:
     try:
-      command = f"scp {mvfile} 45://{target_dir}/{filename}"
+      command = f"scp {mvfile} 45:/{target_dir}/{filename}"
       print(command)
       subprocess.run(command, shell=True, check=True)
       print("SCP 命令执行成功")

@@ -33,13 +33,29 @@ rm -rf $logdir/*
 rm -rf $outputdir/*
 
 if [ "$trainer" = "train_network.py" ]; then
-  mkdir -p /home/admin/lora/train/$dirname
-  echo 'training server remove train loras'
-  rm -rf /home/admin/lora/train/$dirname/*
+  dirpath=/home/admin/lora/train/$dirname
+  mkdir -p $dirpath
+  rm -rf $dirpath/*
+
+  ssh 44 << remotessh
+  mkdir -p $dirpath
+  rm -rf $dirpath/*
+  exit
+remotessh
 else
-  mkdir -p /home/admin/models/train/$dirname
-  rm -rf /home/admin/models/train/$dirname/*
+  dirpath=/home/admin/models/train/$dirname
+  mkdir -p $dirpath
+  rm -rf $dirpath/*
+
+  ssh 44 << remotessh
+  mkdir -p $dirpath
+  rm -rf $dirpath/*
+  exit
+remotessh
 fi
+
+
+
 
 # 进入脚本项目
 cd /home/admin/github/sd-scripts
