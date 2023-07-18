@@ -33,6 +33,7 @@ fi
 
 if [ -d "$dir" ]; then
   curdirname=$(basename $dir)
+  remotepath=/home/admin/github/showMan/$SAVED/${curdirname}/selected_${num}
 
   if [ "$curdirname" = "selected_${num}" ]; then
     echo "cannot do this, don't use selected_${num} directory as param. maybe you are supposed to use save/xxx?"
@@ -59,9 +60,13 @@ if [ -d "$dir" ]; then
   if [ $issamedir -eq 1 ]; then
     remove_level=1
 
-    echo "two dir is same, so do scp"
+    ssh 44 << remotessh
+    rm -rf $savedirnum/*
+    exit
+remotessh
     # 上传到远端
-    scp -r $savedirnum 44:/home/admin/github/showMan/$SAVED/${curdirname}/selected_${num}
+    echo "two dir is same, so do scp"
+    scp -r $savedirnum 44:/$remotepath
   else
     echo "python pyutil/randomName.py $dir 1"
     python pyutil/randomName.py $dir 1
@@ -77,7 +82,7 @@ if [ -d "$dir" ]; then
         echo "cp -r $dir/* $savedirnum"
         cp -r $dir/* $savedirnum
         # 上传到远端
-        scp -r $dir/* 44:/home/admin/github/showMan/$SAVED/${curdirname}/selected_${num}
+        scp -r $dir/* 44:/$remotepath
 
         # 清空导入路径里的图片
         rm -rf $dir/*
@@ -96,7 +101,7 @@ if [ -d "$dir" ]; then
       exit
 remotessh
       # 上传到远端
-      scp -r $dir/* 44:/home/admin/github/showMan/$SAVED/${curdirname}/selected_${num}
+      scp -r $dir/* 44:/$remotepath
 
       # 清空导入路径里的图片
       rm -rf $dir/*
