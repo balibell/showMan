@@ -1,0 +1,14 @@
+[[datasets]]
+  enable_bucket = true
+  resolution = [512, 512]
+  bucket_no_upscale = true
+  min_bucket_reso = 256
+  max_bucket_reso = 1024
+  batch_size = 3
+
+  [[datasets.subsets]]
+  image_dir = '/home/admin/github/showMan/saved/jiga/'
+  caption_extension = '.txt'
+  class_tokens = 'jiga'
+  num_repeats = 10
+  shuffle_caption = true
