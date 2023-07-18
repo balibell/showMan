@@ -11,7 +11,6 @@ num=$3
 typedir=$4
 
 
-echo 11
 if [ "$dir" = "" ]; then
   echo "dir cannot be empty!"
   exit 1
@@ -25,12 +24,10 @@ if [ "$typedir" = "" ]; then
   typedir=$SAVED
 fi
 
-echo 12
 image_path="./${typedir}/${dir}/${SELECTED}_${num}"
 metadata_path="./${typedir}/${dir}/${METADATA}_${num}.json"
 
 
-echo 13
 rm -rf $metadata_path
 
 echo "clearall is [${clearall}]"

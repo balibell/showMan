@@ -53,6 +53,9 @@ if [ -d "$dir" ]; then
     fi
   fi
 
+  echo "issamedir: ${issamedir}  curdirname: ${curdirname}"
+  
+
   if [ $issamedir -eq 1 ]; then
     remove_level=1
 
@@ -60,6 +63,7 @@ if [ -d "$dir" ]; then
     # 上传到远端
     scp -r $dir/* 44:/home/admin/github/showMan/$SAVED/${curdirname}/selected_${num}
   else
+    echo "python pyutil/randomName.py $dir 1"
     python pyutil/randomName.py $dir 1
 
 
