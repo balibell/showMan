@@ -56,10 +56,17 @@ network_args = [ "conv_dim=32", "unit=4", "down_lr_weight=1,0.2,1,1,0.2,1,1,0.2,
 /home/admin/models/models/revAnimated_v122.safetensors
 /home/admin/models/models/v1-5-pruned-emaonly.safetensors
 
+
+## lr_scheduler 学习率曲线
+lr_scheduler = "cosine_with_restarts"
+lr_scheduler = "cosine"
+lr_scheduler = "constant"
+lr_scheduler = "constant_with_warmup"
+
 ## lora训练参数
-* 首先 network_module = "networks.lora"
-# network_dim = 32
-# network_alpha = 16
+network_module = "networks.lora"
+network_dim = 32
+network_alpha = 16
 
 ## dylora训练参数
 * 首先 network_module = "networks.dylora"
