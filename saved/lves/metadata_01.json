@@ -8,7 +8,7 @@
       "fruit",
       "food",
       "ginkgo",
-      "seamless"
+      "seamless_pattern"
     ],
     "mtime": 0
   },
@@ -17,7 +17,9 @@
     "img_dir": "selected_01",
     "prompts_arr": [
       "multi_leaf",
-      "blurry_background"
+      "blurry_background",
+      "outdoor",
+      "branch"
     ],
     "mtime": 0
   },
@@ -37,6 +39,17 @@
     "mtime": 0
   },
   {
+    "file_name": "230718_aSCusI0X.png",
+    "img_dir": "selected_01",
+    "prompts_arr": [
+      "green_theme",
+      "macro_lens",
+      "leaf_meridians",
+      "leaf_texture"
+    ],
+    "mtime": 0
+  },
+  {
     "file_name": "230718_ZfNgdat2.jpeg",
     "img_dir": "selected_01",
     "prompts_arr": [
@@ -48,7 +61,7 @@
       "bug",
       "drawing",
       "sketch",
-      "aligned"
+      "aligned_pattern"
     ],
     "mtime": 0
   },
@@ -60,7 +73,18 @@
       "white_background",
       "simple_background",
       "green_theme",
-      "aligned"
+      "aligned_pattern"
+    ],
+    "mtime": 0
+  },
+  {
+    "file_name": "230718_CxCFdHJr.png",
+    "img_dir": "selected_01",
+    "prompts_arr": [
+      "green_theme",
+      "macro_lens",
+      "leaf_meridians",
+      "leaf_texture"
     ],
     "mtime": 0
   },
@@ -75,7 +99,7 @@
       "white_background",
       "drawing",
       "sketch",
-      "aligned"
+      "aligned_pattern"
     ],
     "mtime": 0
   },
@@ -84,13 +108,11 @@
     "img_dir": "selected_01",
     "prompts_arr": [
       "green_theme",
-      "scenery",
-      "green_background",
-      "outdoors",
       "macro_lens",
       "leaf_meridians",
       "water",
-      "thick"
+      "thick",
+      "leaf_texture"
     ],
     "mtime": 0
   },
@@ -100,7 +122,8 @@
     "prompts_arr": [
       "leaf",
       "autumn_leaf",
-      "maple_leaf"
+      "maple_leaf",
+      "photo of leaf"
     ],
     "mtime": 0
   },
@@ -111,7 +134,8 @@
       "white_background",
       "simple_background",
       "leaf",
-      "maple_leaf"
+      "maple_leaf",
+      "photo of leaf"
     ],
     "mtime": 0
   }
