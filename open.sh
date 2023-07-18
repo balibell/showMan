@@ -53,7 +53,7 @@ if [ -d "$dir" ]; then
     fi
   fi
 
-  echo "issamedir: ${issamedir}  curdirname: ${curdirname}"
+  echo "savedirnum: ${savedirnum} and $dir/selected_${num} issamedir: ${issamedir}  curdirname: ${curdirname}"
   
 
   if [ $issamedir -eq 1 ]; then
@@ -61,11 +61,10 @@ if [ -d "$dir" ]; then
 
     echo "two dir is same, so do scp"
     # 上传到远端
-    scp -r $dir/* 44:/home/admin/github/showMan/$SAVED/${curdirname}/selected_${num}
+    scp -r $savedirnum 44:/home/admin/github/showMan/$SAVED/${curdirname}/selected_${num}
   else
     echo "python pyutil/randomName.py $dir 1"
     python pyutil/randomName.py $dir 1
-
 
 
     if [ -d "$savedirnum" ]; then
