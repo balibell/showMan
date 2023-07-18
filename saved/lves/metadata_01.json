@@ -1,17 +1,5 @@
 [
   {
-    "file_name": "230718_WlNQlI6C.jpeg",
-    "img_dir": "selected_01",
-    "prompts_arr": [
-      "yellow_theme",
-      "ginkgo",
-      "seamless_pattern",
-      "yellow",
-      "group_leaf"
-    ],
-    "mtime": 0
-  },
-  {
     "file_name": "230718_F3mUAso4.png",
     "img_dir": "selected_01",
     "prompts_arr": [
@@ -32,7 +20,7 @@
       "drawing",
       "sketch",
       "circle_pattern",
-      "group_leaf"
+      "lves01"
     ],
     "mtime": 0
   },
@@ -56,7 +44,7 @@
       "drawing",
       "sketch",
       "aligned_pattern",
-      "group_leaf"
+      "lves04"
     ],
     "mtime": 0
   },
@@ -68,16 +56,7 @@
       "simple_background",
       "aligned_pattern",
       "green",
-      "group_leaf"
-    ],
-    "mtime": 0
-  },
-  {
-    "file_name": "230718_CxCFdHJr.png",
-    "img_dir": "selected_01",
-    "prompts_arr": [
-      "leaf_meridians",
-      "green"
+      "lves03"
     ],
     "mtime": 0
   },
@@ -92,7 +71,7 @@
       "drawing",
       "sketch",
       "aligned_pattern",
-      "group_leaf"
+      "lves02"
     ],
     "mtime": 0
   },
