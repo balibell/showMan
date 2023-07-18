@@ -1,0 +1,118 @@
+[
+  {
+    "file_name": "230718_WlNQlI6C.jpeg",
+    "img_dir": "selected_01",
+    "prompts_arr": [
+      "yellow_theme",
+      "leaf_pattern",
+      "fruit",
+      "food",
+      "ginkgo",
+      "seamless"
+    ],
+    "mtime": 0
+  },
+  {
+    "file_name": "230718_F3mUAso4.png",
+    "img_dir": "selected_01",
+    "prompts_arr": [
+      "multi_leaf",
+      "blurry_background"
+    ],
+    "mtime": 0
+  },
+  {
+    "file_name": "230718_QwqtRtJN.jpeg",
+    "img_dir": "selected_01",
+    "prompts_arr": [
+      "monochrome",
+      "greyscale",
+      "leaf_pattern",
+      "white_background",
+      "simple_background",
+      "drawing",
+      "sketch",
+      "circle_pattern"
+    ],
+    "mtime": 0
+  },
+  {
+    "file_name": "230718_ZfNgdat2.jpeg",
+    "img_dir": "selected_01",
+    "prompts_arr": [
+      "monochrome",
+      "greyscale",
+      "leaf_pattern",
+      "simple_background",
+      "white_background",
+      "bug",
+      "drawing",
+      "sketch",
+      "aligned"
+    ],
+    "mtime": 0
+  },
+  {
+    "file_name": "230718_3qphgGbz.png",
+    "img_dir": "selected_01",
+    "prompts_arr": [
+      "leaf_pattern",
+      "white_background",
+      "simple_background",
+      "green_theme",
+      "aligned"
+    ],
+    "mtime": 0
+  },
+  {
+    "file_name": "230718_jflQmuaz.jpeg",
+    "img_dir": "selected_01",
+    "prompts_arr": [
+      "monochrome",
+      "greyscale",
+      "leaf_pattern",
+      "simple_background",
+      "white_background",
+      "drawing",
+      "sketch",
+      "aligned"
+    ],
+    "mtime": 0
+  },
+  {
+    "file_name": "230718_zzo1YZkF.jpeg",
+    "img_dir": "selected_01",
+    "prompts_arr": [
+      "green_theme",
+      "scenery",
+      "green_background",
+      "outdoors",
+      "macro_lens",
+      "leaf_meridians",
+      "water",
+      "thick"
+    ],
+    "mtime": 0
+  },
+  {
+    "file_name": "230718_DOniLW6C.jpeg",
+    "img_dir": "selected_01",
+    "prompts_arr": [
+      "leaf",
+      "autumn_leaf",
+      "maple_leaf"
+    ],
+    "mtime": 0
+  },
+  {
+    "file_name": "230718_gWUyl3GY.png",
+    "img_dir": "selected_01",
+    "prompts_arr": [
+      "white_background",
+      "simple_background",
+      "leaf",
+      "maple_leaf"
+    ],
+    "mtime": 0
+  }
+]
