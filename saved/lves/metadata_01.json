@@ -5,8 +5,6 @@
     "prompts_arr": [
       "yellow_theme",
       "leaf_pattern",
-      "fruit",
-      "food",
       "ginkgo",
       "seamless_pattern"
     ],
@@ -58,7 +56,6 @@
       "leaf_pattern",
       "simple_background",
       "white_background",
-      "bug",
       "drawing",
       "sketch",
       "aligned_pattern"
