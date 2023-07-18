@@ -21,7 +21,6 @@ else
   echo "当前操作系统不是Windows"
 fi
 
-git checkout -- .
 git pull
 
 if [ "$remove_level" = "" ]; then
