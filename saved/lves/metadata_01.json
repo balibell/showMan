@@ -41,9 +41,9 @@
     "img_dir": "selected_01",
     "prompts_arr": [
       "green_theme",
-      "macro_lens",
       "leaf_meridians",
-      "leaf_texture"
+      "leaf_texture",
+      "texture_on_breasts_of_power_armor"
     ],
     "mtime": 0
   },
@@ -79,9 +79,9 @@
     "img_dir": "selected_01",
     "prompts_arr": [
       "green_theme",
-      "macro_lens",
       "leaf_meridians",
-      "leaf_texture"
+      "leaf_texture",
+      "texture_on_breasts_of_power_armor"
     ],
     "mtime": 0
   },
@@ -105,7 +105,6 @@
     "img_dir": "selected_01",
     "prompts_arr": [
       "green_theme",
-      "macro_lens",
       "leaf_meridians",
       "water",
       "thick",
