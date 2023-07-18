@@ -32,30 +32,6 @@ mkdir -p $outputdir
 rm -rf $logdir/*
 rm -rf $outputdir/*
 
-if [ "$trainer" = "train_network.py" ]; then
-  dirpath=/home/admin/lora/train/$dirname
-  mkdir -p $dirpath
-  rm -rf $dirpath/*
-
-  ssh 44 << remotessh
-  mkdir -p $dirpath
-  rm -rf $dirpath/*
-  exit
-remotessh
-else
-  dirpath=/home/admin/models/train/$dirname
-  mkdir -p $dirpath
-  rm -rf $dirpath/*
-
-  ssh 44 << remotessh
-  mkdir -p $dirpath
-  rm -rf $dirpath/*
-  exit
-remotessh
-fi
-
-
-
 
 # 进入脚本项目
 cd /home/admin/github/sd-scripts

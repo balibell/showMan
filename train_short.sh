@@ -39,37 +39,34 @@ else
   dirname="${dirname}_db"
 fi
 
-
+modelpath=/home/admin/models/train/$dirname
 if [ "$trainer" = "train_network.py" ]; then
-ssh 44 << remotessh
-source ~/.zshrc
-node --version
-python --version
-mkdir -p /home/admin/lora/train/$dirname
-echo "remove train loras"
-rm -rf /home/admin/lora/train/$dirname/*
-exit
-remotessh
-else
-ssh 44 << remotessh
-source ~/.zshrc
-node --version
-python --version
-mkdir -p /home/admin/models/train/$dirname
-rm -rf /home/admin/models/train/$dirname/*
-exit
-remotessh
+  modelpath=/home/admin/lora/train/$dirname
 fi
 
+
+ssh 45 << remotessh
+mkdir -p $modelpath
+rm -rf $modelpath/*
+exit
+remotessh
+
+
+
 ssh 44 << remotessh
 source ~/.zshrc
 node --version
 python --version
+
+mkdir -p $modelpath
+rm -rf $modelpath/*
+
 conda activate dbtrain
 cd /home/admin/github/showMan/
 git pull
-
 echo "$nohup sh training/start_train.sh $instancename $trainer $nohupsuf"
 $nohup sh training/start_train.sh $instancename $trainer $nohupsuf
 exit
 remotessh
+
+
