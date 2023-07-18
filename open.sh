@@ -33,14 +33,21 @@ fi
 
 if [ -d "$dir" ]; then
   curdirname=$(basename $dir)
+
+  if [ "$curdirname" = "selected_${num}" ]; then
+    echo "cannot do this, don't use selected_${num} directory as param. maybe you are supposed to use save/xxx?"
+    exit 1
+  fi
+
   savedir=./$SAVED/${curdirname}
   savedirnum=$savedir/selected_${num}
 
   issamedir=0
   if [ -d "$savedirnum" ]; then
     savereal=`realpath $savedirnum`
-    dirreal=`realpath $dir`
+    dirreal=`realpath $dir/selected_${num}`
 
+    echo "to check two dir is same dir"
     if [ "$savereal" = "$dirreal" ]; then
       issamedir=1
     fi
@@ -49,6 +56,7 @@ if [ -d "$dir" ]; then
   if [ $issamedir -eq 1 ]; then
     remove_level=1
 
+    echo "two dir is same, so do scp"
     # 上传到远端
     scp -r $dir/* 44:/home/admin/github/showMan/$SAVED/${curdirname}/selected_${num}
   else
