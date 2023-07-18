@@ -32,44 +32,64 @@ if [ "$num" = "" ]; then
 fi
 
 if [ -d "$dir" ]; then
-  python pyutil/randomName.py $dir 1
-
   curdirname=$(basename $dir)
   savedir=./$SAVED/${curdirname}
   savedirnum=$savedir/selected_${num}
-  if [ -d "$savedirnum" ]; then
-    # 如果 saved 目录下目标文件已经存在，我们认为是新添加素材，此时的 remove_level 应该设置为 1
-    remove_level=1
-    echo "$savedirnum already inited, you can use cmd 'o $curdirname' to open exists dir \n or you can overwrite it as new add. overwrite? [Y/N]:" 
-    read -a choice
 
-    if [ "$choice" = "Y" ] || [ "$choice" = "y" ]; then
-      echo "cp -r $dir/* $savedirnum"
+  issamedir=0
+  if [ -d "$savedirnum" ]; then
+    savereal=`realpath $savedirnum`
+    dirreal=`realpath $dir`
+
+    if [ "$savereal" = "$dirreal" ]; then
+      issamedir=1
+    fi
+  fi
+
+  if [ $issamedir -eq 1 ]; then
+    remove_level=1
+
+    # 上传到远端
+    scp -r $dir/* 44:/home/admin/github/showMan/$SAVED/${curdirname}/selected_${num}
+  else
+    python pyutil/randomName.py $dir 1
+
+
+
+    if [ -d "$savedirnum" ]; then
+      # 如果 saved 目录下目标文件已经存在，我们认为是新添加素材，此时的 remove_level 应该设置为 1
+      remove_level=1
+      echo "$savedirnum already inited, you can use cmd 'o $curdirname' to open exists dir \n or you can overwrite it as new add. overwrite? [Y/N]:" 
+      read -a choice
+
+      if [ "$choice" = "Y" ] || [ "$choice" = "y" ]; then
+        echo "cp -r $dir/* $savedirnum"
+        cp -r $dir/* $savedirnum
+        # 上传到远端
+        scp -r $dir/* 44:/home/admin/github/showMan/$SAVED/${curdirname}/selected_${num}
+
+        # 清空导入路径里的图片
+        rm -rf $dir/*
+      fi
+    else
+      mkdir -p $savedirnum
       cp -r $dir/* $savedirnum
-       # 上传到远端
+
+      ssh 44 << remotessh
+      source ~/.zshrc
+      node --version
+      python --version
+      cd /home/admin/github/showMan
+      git pull
+      mkdir -p $savedirnum
+      exit
+remotessh
+      # 上传到远端
       scp -r $dir/* 44:/home/admin/github/showMan/$SAVED/${curdirname}/selected_${num}
 
       # 清空导入路径里的图片
       rm -rf $dir/*
     fi
-  else
-    mkdir -p $savedirnum
-    cp -r $dir/* $savedirnum
-
-    ssh 44 << remotessh
-    source ~/.zshrc
-    node --version
-    python --version
-    cd /home/admin/github/showMan
-    git pull
-    mkdir -p $savedirnum
-    exit
-remotessh
-    # 上传到远端
-    scp -r $dir/* 44:/home/admin/github/showMan/$SAVED/${curdirname}/selected_${num}
-
-    # 清空导入路径里的图片
-    rm -rf $dir/*
   fi
 
   dir=$curdirname
