@@ -1402,11 +1402,12 @@
       let newLabelVal = $t.text().trim()
 
       if ($t.hasClass('cur') || $t.hasClass('prev')) {
-        if (CTRL && $t.hasClass('cur')) {
+        if (CTRL && $t.hasClass('cur') && shortState > 1) {
           backParams()
         } else {
           showModifyPopbox($t)
         }
+        CTRL = false
       } else {
         let filterSelect = getCurrentLabelParamType()
         if (!isLabel(filterSelect)) {
