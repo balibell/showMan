@@ -1,5 +1,6 @@
 [[datasets]]
   enable_bucket = true
+  resolution = [512, 512]
   bucket_no_upscale = true
   min_bucket_reso = 256
   max_bucket_reso = 1024
