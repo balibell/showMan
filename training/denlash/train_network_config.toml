@@ -13,20 +13,20 @@ resolution = "512,512"
 cache_latents = false
 save_every_n_epochs = 5
 sample_every_n_epochs = 5
-train_batch_size = 3
-gradient_accumulation_steps = 2
+train_batch_size = 4
+gradient_accumulation_steps = 1
 
 
 seed = 1234
-clip_skip = 2
+clip_skip = 1
 max_token_length = 225
-max_train_epochs = 100
+max_train_epochs = 20
 persistent_data_loader_workers = true
 gradient_checkpointing = true
 sample_sampler = "euler_a"
 optimizer_type = "AdamW8bit"
 lr_scheduler = "cosine_with_restarts"
-lr_warmup_steps = 100
+lr_warmup_steps = 200
 lr_scheduler_num_cycles = 0
 learning_rate = 2e-4
 unet_lr = 2e-4
