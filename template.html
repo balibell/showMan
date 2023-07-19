@@ -426,7 +426,7 @@
     </div>
 
     <div id="short-stat" class="al-state"></div>
-    <div id="ctrl-stat" class="al-state">CTRL</div>
+    <div id="ctrl-stat" class="al-state">ALT</div>
     <div id="short-select-all"><input type="checkbox" id="short-select-all-checkbox" onclick="onSelectAllStateChange(event)"/><label for="short-select-all-checkbox">全选</label></div>
   </body>
   <script src="https://a.dtstatic.com/static/cms/js/jquery.min.js"></script>
@@ -847,7 +847,7 @@
                 <div class="data-bottom">
                   <div class="data-desc">${file_name} (${image_width}x${image_height})</div>
                   <div class="data-prompt" onclick="preventClick(event)">${promptHtml}</div>
-                  <button class="copy-button">复制</button>
+                  <button class="copy-button" onclick="copyPrompts(event)">复制</button>
                 </div>
               </div>
             `;
@@ -1035,7 +1035,7 @@
 
 
     // 复制内容
-    $(document).on('click', '.copy-button', function(e) {
+    function copyPrompts(e) {
       e.preventDefault()
       e.stopPropagation()
       let $t = $(e.target)
@@ -1045,7 +1045,7 @@
       $temp.val(str).select();
       document.execCommand('copy');
       $temp.remove();
-    });
+    }
 
 
     function updateCropInfo() {
@@ -1237,7 +1237,7 @@
       $('#box-label-modify').hide()
 
       let modifymap = getModifyMap()
-      if (CTRL) {
+      if (ACTION_ALT) {
         // TODO 单个编辑、添加
         editItemInPageList(function(item) {
           let fileName = $targetEditLabel.closest('.data-item').attr('filename')
@@ -1359,13 +1359,13 @@
     }
 
     function onDeletePopHover() {
-      if (CTRL) {
+      if (ACTION_ALT) {
         window.clearTimeout(labelHoverTimer)
       }
     }
 
     function onLabelHover(e) {
-      if (CTRL) {
+      if (ACTION_ALT) {
         let $target = $(e.target)
         window.clearTimeout(labelHoverTimer)
         labelHoverTimer = window.setTimeout(function() {
@@ -1408,12 +1408,12 @@
       let newLabelVal = $t.text().trim()
 
       if ($t.hasClass('cur') || $t.hasClass('prev')) {
-        if (CTRL && $t.hasClass('cur') && shortState >= 1) {
+        if (ACTION_ALT && $t.hasClass('cur') && shortState >= 1) {
           backParams()
         } else {
           showModifyPopbox($t)
         }
-        CTRL = false
+        ACTION_ALT = false
       } else {
         let filterSelect = getCurrentLabelParamType()
         if (!isLabel(filterSelect)) {
@@ -1649,11 +1649,11 @@
     }
 
     // document keydown
-    let CTRL = false
+    let ACTION_ALT = false
     $(document).keydown(function (event) {
       console.log(event.keyCode)
-      if (event.keyCode === 91) {
-        CTRL = true
+      if (event.keyCode === 18) {
+        ACTION_ALT = true
         $('#ctrl-stat').show()
       }
     })
@@ -1668,8 +1668,8 @@
 
         toggleShortState(shortState)
        
-      } else if (event.keyCode === 91) {
-        CTRL = false
+      } else if (event.keyCode === 18) {
+        ACTION_ALT = false
         $('#ctrl-stat').hide()
       }
     })
