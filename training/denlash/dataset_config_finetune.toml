@@ -1,0 +1,11 @@
+[[datasets]]
+  enable_bucket = true
+  bucket_no_upscale = true
+  min_bucket_reso = 256
+  max_bucket_reso = 1024
+  batch_size = 1
+
+  [[datasets.subsets]]
+  metadata_file = '/home/admin/github/showMan/saved/denlash/data.json'
+  num_repeats = 5
+  shuffle_caption = true
