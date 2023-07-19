@@ -55,8 +55,10 @@ remotessh
 
 ssh 44 << remotessh
 source ~/.zshrc
-node --version
-python --version
+
+echo "======================= training server =========================="
+hostname
+echo "=================================================================="
 
 mkdir -p $modelpath
 rm -rf $modelpath/*
