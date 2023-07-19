@@ -6,7 +6,6 @@
       "earrings",
       "golden_eyeshadow",
       "black_hair",
-      "makeup",
       "mole",
       "closed_mouth",
       "long_eyelash",
@@ -18,13 +17,9 @@
     "file_name": "230719_kjlcwgcS.jpg",
     "img_dir": "selected_01",
     "prompts_arr": [
-      "red_lips",
-      "makeup",
-      "teeth",
       "looking_at_viewer",
       "parted_lips",
       "lips",
-      "white_background",
       "blond_hair",
       "pink_eyeshadow",
       "eyelash"
@@ -36,10 +31,7 @@
     "img_dir": "selected_01",
     "prompts_arr": [
       "earrings",
-      "makeup",
       "closed_eyes",
-      "white_background",
-      "ear_piercing",
       "pink_eyeshadow",
       "closed_mouth",
       "eyelash"
@@ -52,7 +44,6 @@
     "prompts_arr": [
       "black_hair",
       "earrings",
-      "makeup",
       "golden_eyeshadow",
       "long_eyelash",
       "closed_eyes"
@@ -65,7 +56,6 @@
     "prompts_arr": [
       "eyeshadow",
       "earrings",
-      "makeup",
       "black_hair",
       "bracelet",
       "long_eyelash",
@@ -78,7 +68,6 @@
     "img_dir": "selected_01",
     "prompts_arr": [
       "long_hair",
-      "makeup",
       "green_eyeshadow",
       "looking_at_viewer",
       "black_hair",
@@ -94,7 +83,6 @@
       "earrings",
       "long_hair",
       "brown_hair",
-      "makeup",
       "eyeshadow",
       "grey_background",
       "upper_body",
@@ -110,9 +98,7 @@
     "prompts_arr": [
       "earrings",
       "black_hair",
-      "makeup",
       "short_hair",
-      "nail_polish",
       "green_eyeshadow",
       "long_eyelash",
       "closed_eyes"
@@ -123,7 +109,6 @@
     "file_name": "230719_5hbynF4L.jpg",
     "img_dir": "selected_01",
     "prompts_arr": [
-      "makeup",
       "long_hair",
       "black_hair",
       "green_eyeshadow",
