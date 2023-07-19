@@ -1,4 +1,4 @@
-pretrained_model_name_or_path = "/root/lora/duitang/ReV_Animated_v1.2.2.safetensors"
+pretrained_model_name_or_path = "/root/models/duitang/ReV_Animated_v1.2.2.safetensors"
 caption_extension = ".txt"
 resolution = "512,512"
 cache_latents = false

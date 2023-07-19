@@ -53,7 +53,7 @@ network_args = [ "conv_dim=32", "unit=4", "down_lr_weight=1,0.2,1,1,0.2,1,1,0.2,
 
 ## 常用模型
 /home/admin/models/models/anything-v4.5-pruned.safetensors
-/home/admin/models/models/revAnimated_v122.safetensors
+/home/admin/models/duitang/ReV_Animated_v1.2.2.safetensors
 /home/admin/models/models/v1-5-pruned-emaonly.safetensors
 
 
