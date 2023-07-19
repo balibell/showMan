@@ -418,7 +418,7 @@
       <button class="delete-btn" onclick="doDeleteLabel()">删除</button>
     </div>
 
-    <div id="short-stat">Del</div>
+    <div id="short-stat"></div>
     <div id="short-select-all"><input type="checkbox" id="short-select-all-checkbox" onclick="onSelectAllStateChange(event)"/><label for="short-select-all-checkbox">全选</label></div>
   </body>
   <script src="https://a.dtstatic.com/static/cms/js/jquery.min.js"></script>
@@ -430,7 +430,7 @@
     const CROP_ARR_2 = 'crop_arr_2'
     const KEY_PARAM_TYPE = 'type'
     const KEY_PARAM_VALUE = 'value'
-    const STATE_STRS = ['', 'Del', 'Sec', 'Thd']
+    const STATE_STRS = ['', 'Sec', 'Thd']
 
     var inputParamArr = [];
     var shortState = parseInt(localStorage.getItem('shortState')) || 0
@@ -482,7 +482,7 @@
             if (param) {
               filters.push(param)
             }
-            if (shortState < 2) {
+            if (shortState < 1) {
               break;
             }
           }
@@ -800,7 +800,7 @@
       let promptHtml = ''
       for (let prompt of prompts_arr) {
         let filterInput = getCurrentLabelParamValue()
-        let promptClass = prompt == filterInput ? 'cur' : shortState > 1 && isPromptMeetPrevious(prompt) ? 'prev' : ''
+        let promptClass = prompt == filterInput ? 'cur' : shortState >= 1 && isPromptMeetPrevious(prompt) ? 'prev' : ''
         promptHtml += `<a href="javascript:;" class="${promptClass}" onclick="onLabelClick(event)" onmouseleave="onLabelLeave(event)" onmouseover="onLabelHover(event)">${prompt}</a><span>, </span>`
       }
 
@@ -1229,8 +1229,8 @@
       $('#box-label-modify').hide()
 
       let modifymap = getModifyMap()
-      if (shortState === 1) {
-        // 单个编辑、添加
+      if (shortState === -1) {
+        // TODO 单个编辑、添加
         editItemInPageList(function(item) {
           let fileName = $targetEditLabel.closest('.data-item').attr('filename')
           return fileName == item.file_name
@@ -1344,22 +1344,20 @@
     }
 
     function onLabelLeave(e) {
-      if (shortState == 1) {
-        window.clearTimeout(labelHoverTimer)
-        labelHoverTimer = window.setTimeout(function() {
-          hideDeletePopbox()
-        }, 1000)
-      }
+      window.clearTimeout(labelHoverTimer)
+      labelHoverTimer = window.setTimeout(function() {
+        hideDeletePopbox()
+      }, 1000)
     }
 
     function onDeletePopHover() {
-      if (shortState == 1) {
+      if (CTRL) {
         window.clearTimeout(labelHoverTimer)
       }
     }
 
     function onLabelHover(e) {
-      if (shortState == 1) {
+      if (CTRL) {
         let $target = $(e.target)
         window.clearTimeout(labelHoverTimer)
         labelHoverTimer = window.setTimeout(function() {
@@ -1402,7 +1400,7 @@
       let newLabelVal = $t.text().trim()
 
       if ($t.hasClass('cur') || $t.hasClass('prev')) {
-        if (CTRL && $t.hasClass('cur') && shortState > 1) {
+        if (CTRL && $t.hasClass('cur') && shortState >= 1) {
           backParams()
         } else {
           showModifyPopbox($t)
