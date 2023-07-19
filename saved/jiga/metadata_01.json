@@ -1,65 +1,5 @@
 [
   {
-    "file_name": "230719_S4nApGFI.jpg",
-    "img_dir": "selected_01",
-    "prompts_arr": [
-      "upper_body",
-      "breasts",
-      "long_hair",
-      "floating_hair",
-      "medium_breasts",
-      "lips",
-      "black_hair",
-      "earrings",
-      "jewelry",
-      "gem",
-      "shards"
-    ],
-    "mtime": 0
-  },
-  {
-    "file_name": "230719_vsj1Fcvc.jpg",
-    "img_dir": "selected_01",
-    "prompts_arr": [
-      "sword",
-      "armor",
-      "holding_sword",
-      "cape",
-      "glint",
-      "earrings",
-      "jewelry",
-      "shoulder_armor",
-      "lips",
-      "brown_hair",
-      "breastplate",
-      "black_hair",
-      "upper_body",
-      "aqua_eyes"
-    ],
-    "mtime": 0
-  },
-  {
-    "file_name": "230719_z8kSaRjf.jpg",
-    "img_dir": "selected_01",
-    "prompts_arr": [
-      "blue_eyes",
-      "blonde_hair",
-      "armor",
-      "space",
-      "ponytail",
-      "planet",
-      "lips",
-      "power_armor",
-      "long_hair",
-      "bodysuit",
-      "breasts",
-      "science_fiction",
-      "star_(sky)",
-      "sky"
-    ],
-    "mtime": 0
-  },
-  {
     "file_name": "230719_SpTI6BpM.jpeg",
     "img_dir": "selected_01",
     "prompts_arr": [
@@ -76,28 +16,6 @@
       "mechanical_ears",
       "watermark",
       "anime_style"
-    ],
-    "mtime": 0
-  },
-  {
-    "file_name": "230719_qtocqXOO.jpg",
-    "img_dir": "selected_01",
-    "prompts_arr": [
-      "short_hair",
-      "breasts",
-      "earrings",
-      "jewelry",
-      "upper_body",
-      "brown_hair",
-      "day",
-      "blush",
-      "lips",
-      "medium_breasts",
-      "sky",
-      "bangs",
-      "bodysuit",
-      "armor",
-      "outdoors"
     ],
     "mtime": 0
   }
