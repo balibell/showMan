@@ -282,7 +282,7 @@
       }
 
       /* short del */
-      #short-stat {
+      .al-state {
         display: none;
         position: fixed;
         overflow: hidden;
@@ -297,6 +297,13 @@
         border-radius: 10px;
         border: 1px solid grey;
         font-size: 12px;
+      }
+
+      #ctrl-stat {
+        display: none;
+        top: 30px;
+        border: 0 none;
+        color: red;
       }
 
       /* short select all */
@@ -418,7 +425,8 @@
       <button class="delete-btn" onclick="doDeleteLabel()">删除</button>
     </div>
 
-    <div id="short-stat"></div>
+    <div id="short-stat" class="al-state"></div>
+    <div id="ctrl-stat" class="al-state">CTRL</div>
     <div id="short-select-all"><input type="checkbox" id="short-select-all-checkbox" onclick="onSelectAllStateChange(event)"/><label for="short-select-all-checkbox">全选</label></div>
   </body>
   <script src="https://a.dtstatic.com/static/cms/js/jquery.min.js"></script>
@@ -1229,7 +1237,7 @@
       $('#box-label-modify').hide()
 
       let modifymap = getModifyMap()
-      if (shortState === -1) {
+      if (CTRL) {
         // TODO 单个编辑、添加
         editItemInPageList(function(item) {
           let fileName = $targetEditLabel.closest('.data-item').attr('filename')
@@ -1646,6 +1654,7 @@
       console.log(event.keyCode)
       if (event.keyCode === 91) {
         CTRL = true
+        $('#ctrl-stat').show()
       }
     })
 
@@ -1661,6 +1670,7 @@
        
       } else if (event.keyCode === 91) {
         CTRL = false
+        $('#ctrl-stat').hide()
       }
     })
 
