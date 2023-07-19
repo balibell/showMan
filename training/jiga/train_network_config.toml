@@ -1,4 +1,4 @@
-pretrained_model_name_or_path = "/root/models/duitang/ReV_Animated_v1.2.2.safetensors"
+pretrained_model_name_or_path = "/home/admin/models/models/anything-v4.5-pruned.safetensors"
 caption_extension = ".txt"
 resolution = "512,512"
 cache_latents = false
@@ -12,24 +12,24 @@ train_batch_size = 3
 
 
 seed = 1234
-clip_skip = 1
+clip_skip = 2
 max_token_length = 225
 xformers = true
 max_train_epochs = 100
 persistent_data_loader_workers = true
 gradient_checkpointing = true
-gradient_accumulation_steps = 2
+gradient_accumulation_steps = 1
 mixed_precision = "fp16"
 logging_dir = "/home/admin/github/showMan/training/log/jiga_network"
 sample_prompts = "/home/admin/github/showMan/training/jiga/prompt.txt"
 sample_sampler = "euler_a"
 optimizer_type = "AdamW8bit"
-learning_rate = 2e-4
+learning_rate = 2.2e-4
 lr_scheduler = "cosine_with_restarts"
 lr_warmup_steps = 100
 lr_scheduler_num_cycles = 4
 dataset_config = "/home/admin/github/showMan/training/jiga/dataset_config.toml"
-unet_lr = 2e-4
+unet_lr = 2.2e-4
 text_encoder_lr = 1e-4
 multires_noise_iterations = 6
 multires_noise_discount = 0.1
