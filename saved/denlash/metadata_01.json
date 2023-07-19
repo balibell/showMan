@@ -4,16 +4,13 @@
     "img_dir": "selected_01",
     "prompts_arr": [
       "earrings",
-      "jewelry",
-      "black_nails",
-      "nail_polish",
       "eyeshadow",
       "black_hair",
       "makeup",
       "mole",
-      "portrait",
       "closed_mouth",
-      "denlash"
+      "long_eyelash",
+      "closed_eyes"
     ],
     "mtime": 0
   },
@@ -22,7 +19,6 @@
     "img_dir": "selected_01",
     "prompts_arr": [
       "red_lips",
-      "portrait",
       "makeup",
       "teeth",
       "looking_at_viewer",
@@ -30,7 +26,8 @@
       "lips",
       "white_background",
       "blond_hair",
-      "denlash"
+      "eyeshadow",
+      "long_eyelash"
     ],
     "mtime": 0
   },
@@ -39,16 +36,13 @@
     "img_dir": "selected_01",
     "prompts_arr": [
       "earrings",
-      "piercing",
       "makeup",
       "closed_eyes",
-      "jewelry",
       "white_background",
-      "portrait",
       "ear_piercing",
       "eyeshadow",
       "closed_mouth",
-      "denlash"
+      "long_eyelash"
     ],
     "mtime": 0
   },
@@ -59,9 +53,9 @@
       "black_hair",
       "earrings",
       "makeup",
-      "jewelry",
       "eyeshadow",
-      "denlash"
+      "long_eyelash",
+      "closed_eyes"
     ],
     "mtime": 0
   },
@@ -69,17 +63,13 @@
     "file_name": "230719_yn3pGlNp.jpg",
     "img_dir": "selected_01",
     "prompts_arr": [
-      "jewelry",
       "eyeshadow",
       "earrings",
       "makeup",
       "black_hair",
-      "bare_shoulders",
-      "piercing",
-      "off-shoulder_shirt",
       "bracelet",
-      "off_shoulder",
-      "denlash"
+      "long_eyelash",
+      "closed_eyes"
     ],
     "mtime": 0
   },
@@ -92,9 +82,8 @@
       "eyeshadow",
       "looking_at_viewer",
       "black_hair",
-      "portrait",
       "brown_background",
-      "denlash"
+      "long_eyelash"
     ],
     "mtime": 0
   },
@@ -102,7 +91,6 @@
     "file_name": "230719_V5yewJ3N.jpeg",
     "img_dir": "selected_01",
     "prompts_arr": [
-      "jewelry",
       "earrings",
       "long_hair",
       "brown_hair",
@@ -110,7 +98,8 @@
       "eyeshadow",
       "grey_background",
       "upper_body",
-      "denlash"
+      "long_eyelash",
+      "closed_eyes"
     ],
     "mtime": 0
   },
@@ -118,17 +107,26 @@
     "file_name": "230719_DksyGRK6.jpeg",
     "img_dir": "selected_01",
     "prompts_arr": [
-      "jewelry",
       "earrings",
       "black_hair",
       "makeup",
-      "tiara",
       "short_hair",
-      "watermark",
-      "portrait",
       "nail_polish",
       "eyeshadow",
-      "denlash"
+      "long_eyelash",
+      "closed_eyes"
+    ],
+    "mtime": 0
+  },
+  {
+    "file_name": "230719_5hbynF4L.jpg",
+    "img_dir": "selected_01",
+    "prompts_arr": [
+      "makeup",
+      "long_hair",
+      "black_hair",
+      "eyeshadow",
+      "looking_at_viewer"
     ],
     "mtime": 0
   }
