@@ -18,7 +18,7 @@ gradient_accumulation_steps = 2
 
 
 seed = 1234
-clip_skip = 2
+clip_skip = 1
 max_token_length = 225
 max_train_epochs = 100
 persistent_data_loader_workers = true
