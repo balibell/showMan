@@ -4,7 +4,7 @@
     "img_dir": "selected_01",
     "prompts_arr": [
       "earrings",
-      "eyeshadow",
+      "golden_eyeshadow",
       "black_hair",
       "makeup",
       "mole",
@@ -26,8 +26,8 @@
       "lips",
       "white_background",
       "blond_hair",
-      "eyeshadow",
-      "long_eyelash"
+      "pink_eyeshadow",
+      "eyelash"
     ],
     "mtime": 0
   },
@@ -40,9 +40,9 @@
       "closed_eyes",
       "white_background",
       "ear_piercing",
-      "eyeshadow",
+      "pink_eyeshadow",
       "closed_mouth",
-      "long_eyelash"
+      "eyelash"
     ],
     "mtime": 0
   },
@@ -53,7 +53,7 @@
       "black_hair",
       "earrings",
       "makeup",
-      "eyeshadow",
+      "golden_eyeshadow",
       "long_eyelash",
       "closed_eyes"
     ],
@@ -79,7 +79,7 @@
     "prompts_arr": [
       "long_hair",
       "makeup",
-      "eyeshadow",
+      "green_eyeshadow",
       "looking_at_viewer",
       "black_hair",
       "brown_background",
@@ -99,7 +99,8 @@
       "grey_background",
       "upper_body",
       "long_eyelash",
-      "closed_eyes"
+      "closed_eyes",
+      "pink_eyeshadow"
     ],
     "mtime": 0
   },
@@ -112,7 +113,7 @@
       "makeup",
       "short_hair",
       "nail_polish",
-      "eyeshadow",
+      "green_eyeshadow",
       "long_eyelash",
       "closed_eyes"
     ],
@@ -125,8 +126,9 @@
       "makeup",
       "long_hair",
       "black_hair",
-      "eyeshadow",
-      "looking_at_viewer"
+      "green_eyeshadow",
+      "looking_at_viewer",
+      "eyelash"
     ],
     "mtime": 0
   }
