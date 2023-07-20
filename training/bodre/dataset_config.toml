@@ -1,13 +1,14 @@
 [[datasets]]
   enable_bucket = true
   bucket_no_upscale = true
+  resolution = [1024, 1538]
   min_bucket_reso = 256
-  max_bucket_reso = 1024
-  batch_size = 3
+  max_bucket_reso = 1538
+  batch_size = 2
 
   [[datasets.subsets]]
   image_dir = '/home/admin/github/showMan/saved/bodre/'
   caption_extension = '.txt'
   class_tokens = 'bodre'
-  num_repeats = 10
+  num_repeats = 30
   shuffle_caption = true
