@@ -4,7 +4,7 @@
   resolution = [1024, 1538]
   min_bucket_reso = 256
   max_bucket_reso = 1538
-  batch_size = 2
+  batch_size = 1
 
   [[datasets.subsets]]
   image_dir = '/home/admin/github/showMan/saved/bodre/'
