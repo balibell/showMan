@@ -29,9 +29,9 @@ image_path="./${typedir}/${dir}/${SELECTED}_${num}"
 
 
 
-echo "clearall is [${clearall}]"
+echo "param clearall is [${clearall}]"
 if [ $clearall -eq 1 ]; then
-  echo 'clearall'
+  echo 'do clearall'
   # 删除图和文本，clearall 全删除
   rm -rf $image_path
 else
