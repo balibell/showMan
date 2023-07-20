@@ -9,6 +9,7 @@ clearall=$1
 dir=$2
 num=$3
 typedir=$4
+runlocal=$5
 
 
 if [ "$dir" = "" ]; then
@@ -25,10 +26,8 @@ if [ "$typedir" = "" ]; then
 fi
 
 image_path="./${typedir}/${dir}/${SELECTED}_${num}"
-metadata_path="./${typedir}/${dir}/${METADATA}_${num}.json"
 
 
-rm -rf $metadata_path
 
 echo "clearall is [${clearall}]"
 if [ $clearall -eq 1 ]; then
@@ -40,6 +39,24 @@ else
   rm -rf $image_path/*.txt
 fi
 
-git add $metadata_path
-git commit -m"remove metadata"
-git push
+
+
+
+
+
+if [ "$runlocal" = "" ]; then
+
+  metadata_path="./${typedir}/${dir}/${METADATA}_${num}.json"
+  rm -rf $metadata_path
+  git add $metadata_path
+  git commit -m"remove metadata"
+  git push
+
+  ssh 44 << remotessh
+  cd /home/admin/github/showMan
+  git pull
+  sh clear_inst.sh $clearall $dir $num $typedir '1'
+  exit
+remotessh
+
+fi
