@@ -4,7 +4,7 @@
   bucket_no_upscale = true
   min_bucket_reso = 256
   max_bucket_reso = 1024
-  batch_size = 3
+  batch_size = 6
 
   [[datasets.subsets]]
   image_dir = '/home/admin/github/showMan/saved/haoyue/'
