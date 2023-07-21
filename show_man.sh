@@ -1,7 +1,7 @@
 #!/bin/bash
 
 dotrim=$1
-genmeta=$2
+instprompt=$2
 typedir=$3
 dir=$4
 num=$5
@@ -24,8 +24,8 @@ rm -rf $image_path/.*
 
 echo $metadata
 
-echo "genmeta is $genmeta"
-if [ "$genmeta" = "meta" ]; then
+echo "instprompt is [$instprompt]"
+if [ "$instprompt" != "" ]; then
   echo "rm -rf $metadata"
   # 删除以强制更新 metadata，否则，会优先使用 metadata 文件里的定义，不在 metadata 里的图片会被删掉
   rm -rf $metadata
@@ -33,8 +33,8 @@ fi
 
 # -f 参数判断 $file 是否存在
 if [ ! -f "$metadata" ]; then
-  echo "sh gen_metadata.sh $typedir $dir $num"
-  sh gen_metadata.sh $typedir $dir $num
+  echo "sh gen_metadata.sh $typedir $dir $num $instprompt"
+  sh gen_metadata.sh $typedir $dir $num $instprompt
 fi
 
 if [ "$remote" != "remoteonly" ]; then
@@ -60,7 +60,7 @@ if [ "$remote" = "remoteonly" ] || [ "$remote" = "all" ]; then
   python --version
   cd /home/admin/github/showMan
   git pull
-  sh show_man.sh "$dotrim" "$genmeta" $typedir $dir $num $mtimesort
+  sh show_man.sh "$dotrim" "$instprompt" $typedir $dir $num $mtimesort
   git checkout -- .
   exit
 remotessh

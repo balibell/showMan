@@ -55,7 +55,9 @@ network_args = [ "conv_dim=32", "unit=4", "down_lr_weight=1,0.2,1,1,0.2,1,1,0.2,
 /home/admin/models/models/anything-v4.5-pruned.safetensors
 /home/admin/models/duitang/ReV_Animated_v1.2.2.safetensors
 /home/admin/models/models/v1-5-pruned-emaonly.safetensors
-
+/home/admin/models/models/BraV5_fp16.safetensors
+/home/admin/models/models/majicmixrealistic_v6.0.safetensors
+/home/admin/models/models/beautiful_realistic_asians_v6.0.safetensors
 
 ## lr_scheduler 学习率曲线
 lr_scheduler = "cosine_with_restarts"
