@@ -11,7 +11,7 @@ SELECTED='selected'
 image_path="./${typedir}/${dir}/${SELECTED}_${num}"
 metadata="./${typedir}/${dir}/${METADATA}_${num}.json"
 
-if [ "$instprompt" = "" || "$instprompt" = "tagger" ]; then
+if [ "$instprompt" = "" ] || [ "$instprompt" = "tagger" ]; then
   txt_num=$((`ls -l $image_path | grep '\.txt' | wc -l`))
   txt_num_v=$((`ls -l $image_path | grep -v '\.txt' | wc -l`))
   image_num=$(expr "$txt_num_v" - 1)
