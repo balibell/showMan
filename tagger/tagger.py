@@ -323,6 +323,9 @@ if __name__ == '__main__':
   tags_level = args.tags_level # tagger 词汇总表的级别，目前 0 和 9，越大的话词汇越少
 
 
+  print('--------------------------------- tagger.py')
+  print(f'ignore_exists: {ignore_exists}')
+
   # 参数校验
   if ignore_exists_time != '':
     try:

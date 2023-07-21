@@ -31,8 +31,8 @@ doTagger() {
     imgdir=$newdir
   fi
   # 给目录下的图片打上tag，生成对应的txt 文件
-  echo "python tagger/tagger.py -da="${imgdir}" -th=$threshold -lv=$level -ig"
-  python tagger/tagger.py -da="${imgdir}" -th=$threshold -lv=$level -ig
+  echo "python tagger/tagger.py -da="${imgdir}" -th=$threshold -lv=$level -ig=True"
+  python tagger/tagger.py -da="${imgdir}" -th=$threshold -lv=$level -ig=True
 }
 
 

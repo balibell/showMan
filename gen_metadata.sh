@@ -16,7 +16,8 @@ if [ "$instprompt" = "" ] || [ "$instprompt" = "tagger" ]; then
   txt_num_v=$((`ls -l $image_path | grep -v '\.txt' | wc -l`))
   image_num=$(expr "$txt_num_v" - 1)
   echo "txt_num is ${txt_num} and image_num is ${image_num}"
-  if [ $txt_num -ne $image_num ]; then
+  if [ $txt_num -ne $image_num ] || [ "$instprompt" = "tagger" ]; then
+    echo "sh tagger.sh 0 $typedir $dir $num"
     sh tagger.sh 0 $typedir $dir $num
   fi
 else
