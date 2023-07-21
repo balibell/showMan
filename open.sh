@@ -45,15 +45,15 @@ if [ -d "$dir" ]; then
   savedirnum=$savedir/selected_${num}
 
   issamedir=0
-  if [ -d "$savedirnum" ]; then
-    savereal=`realpath $savedirnum`
-    dirreal=`realpath $dir/selected_${num}`
+  # if [ -d "$savedirnum" ]; then
+  #   savereal=`realpath $savedirnum`
+  #   dirreal=`realpath $dir/selected_${num}`
 
-    echo "to check two dir is same dir"
-    if [ "$savereal" = "$dirreal" ]; then
-      issamedir=1
-    fi
-  fi
+  #   echo "to check two dir is same dir"
+  #   if [ "$savereal" = "$dirreal" ]; then
+  #     issamedir=1
+  #   fi
+  # fi
 
   echo "savedirnum: ${savedirnum} and $dir/selected_${num} issamedir: ${issamedir}  curdirname: ${curdirname}"
   
