@@ -1,0 +1,31 @@
+pretrained_model_name_or_path = "/home/admin/models/models/anything-v4.5-pruned.safetensors"
+resolution = "512,512"
+cache_latents = false
+output_dir = "/home/admin/github/showMan/training/output/haoyue_finetune"
+output_name = "haoyue"
+save_precision = "fp16"
+save_model_as = "safetensors"
+save_every_n_epochs = 1
+train_batch_size = 4
+max_token_length = 150
+xformers = true
+max_train_epochs = 10
+persistent_data_loader_workers = true
+gradient_checkpointing = true
+mixed_precision = "fp16"
+logging_dir = "/home/admin/github/showMan/training/log/haoyue_finetune"
+sample_every_n_epochs = 1
+sample_prompts = "/home/admin/github/showMan/training/haoyue/prompt.txt"
+sample_sampler = "euler_a"
+optimizer_type = "AdamW8bit"
+learning_rate = 1e-5
+lr_scheduler = "constant"
+lr_warmup_steps = 0
+lr_scheduler_num_cycles = 0
+dataset_config = "/home/admin/github/showMan/training/haoyue/dataset_config_finetune.toml"
+unet_lr = 1e-5
+text_encoder_lr = 1
+train_text_encoder = true
+stop_text_encoder_training = 10000
+
+
