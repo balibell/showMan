@@ -1,11 +1,12 @@
 #!/bin/bash
 
 dotrim=$1
-typedir=$2
-dir=$3
-num=$4
-mtimesort=$5
-remote=$6
+genmeta=$2
+typedir=$3
+dir=$4
+num=$5
+mtimesort=$6
+remote=$7
 
 git pull
 
@@ -22,6 +23,10 @@ metadata="./${typedir}/${dir}/metadata_${num}.json"
 rm -rf $image_path/.*
 
 echo $metadata
+if [ "$genmeta" = "1" ]; then
+  # 删除以强制更新 metadata，否则，会优先使用 metadata 文件里的定义，不在 metadata 里的图片会被删掉
+  rm -rf $metadata
+fi
 
 # -f 参数判断 $file 是否存在
 if [ ! -f "$metadata" ]; then
@@ -52,7 +57,7 @@ node --version
 python --version
 cd /home/admin/github/showMan
 git pull
-sh show_man.sh "$dotrim" $typedir $dir $num $mtimesort
+sh show_man.sh "$dotrim" "$genmeta" $typedir $dir $num $mtimesort
 git checkout -- .
 exit
 remotessh
