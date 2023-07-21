@@ -10,5 +10,5 @@
   image_dir = '/home/admin/github/showMan/saved/haoyue/'
   caption_extension = '.txt'
   class_tokens = 'haoyue'
-  num_repeats = 10
+  num_repeats = 5
   shuffle_caption = true
