@@ -150,8 +150,8 @@
     "img_dir": "selected_01",
     "prompts_arr": [
       "photo of haoyue",
-      "nasolabial",
-      "headwear"
+      "headwear",
+      "nasolabial"
     ],
     "mtime": 0
   },
@@ -330,8 +330,8 @@
     "img_dir": "selected_01",
     "prompts_arr": [
       "photo of haoyue",
-      "nasolabial",
-      "headwear"
+      "headwear",
+      "nasolabial"
     ],
     "mtime": 0
   },
