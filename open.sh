@@ -153,7 +153,7 @@ echo "===================training dir created to check it training/$dir"
 
 
 
-
+exit
 
 
 

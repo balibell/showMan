@@ -23,7 +23,10 @@ metadata="./${typedir}/${dir}/metadata_${num}.json"
 rm -rf $image_path/.*
 
 echo $metadata
+
+echo "genmeta is $genmeta"
 if [ "$genmeta" = "f" ]; then
+  echo "rm -rf $metadata"
   # 删除以强制更新 metadata，否则，会优先使用 metadata 文件里的定义，不在 metadata 里的图片会被删掉
   rm -rf $metadata
 fi
