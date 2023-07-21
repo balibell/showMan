@@ -1,7 +1,7 @@
 #!/bin/bash
 
 dir=$1
-genmeta=$2
+instprompt=$2
 num=$3
 remove_level=$4
 
@@ -132,8 +132,8 @@ else
 fi
 
 # -f 参数判断 $file 是否存在
-echo "sh show_man.sh '1' '$genmeta' $SAVED $dir $num 0"
-sh show_man.sh '1' "$genmeta" $SAVED $dir $num 0
+echo "sh show_man.sh '1' '$instprompt' $SAVED $dir $num 0"
+sh show_man.sh '1' "$instprompt" $SAVED $dir $num 0
 if [ $is_win -eq 0 ]; then
   open ./$SAVED/${dir}/${WORK}_${num}_0.html
 else
@@ -167,7 +167,7 @@ function handle_interrupt {
   done;
   cat /dev/null > confirmCropped.txt
 
-  sh show_man.sh '1' "$genmeta" $SAVED $dir $num 0
+  sh show_man.sh '1' "$instprompt" $SAVED $dir $num 0
 
   git add $CONFIRM_DELETE
   git add $CONFIRM_EDIT_MAP
@@ -189,7 +189,7 @@ function handle_interrupt {
 
 
   if [ $scpmetadata -eq 1 ]; then
-    sh show_man.sh '1' "$genmeta" $SAVED $dir $num 0 remoteonly
+    sh show_man.sh '1' "$instprompt" $SAVED $dir $num 0 remoteonly
   fi
 }
 

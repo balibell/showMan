@@ -33,8 +33,8 @@ fi
 
 # -f 参数判断 $file 是否存在
 if [ ! -f "$metadata" ]; then
-  echo "sh gen_metadata.sh $typedir $dir $num $instprompt"
-  sh gen_metadata.sh $typedir $dir $num $instprompt
+  echo "sh gen_metadata.sh $typedir $dir $num '$instprompt'"
+  sh gen_metadata.sh $typedir $dir $num "$instprompt"
 fi
 
 if [ "$remote" != "remoteonly" ]; then
