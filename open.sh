@@ -153,8 +153,6 @@ echo "===================training dir created to check it training/$dir"
 
 
 
-exit
-
 
 
 # 定义信号处理函数
