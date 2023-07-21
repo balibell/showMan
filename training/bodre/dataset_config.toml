@@ -4,13 +4,13 @@
   resolution = [1024, 1152]
   min_bucket_reso = 256
   max_bucket_reso = 1152
-  batch_size = 1
+  batch_size = 3
 
   [[datasets.subsets]]
   image_dir = '/home/admin/github/showMan/saved/bodre/'
   caption_extension = '.txt'
   class_tokens = 'bodre'
-  num_repeats = 10
+  num_repeats = 2
   shuffle_caption = true
 
 
@@ -20,11 +20,11 @@
   resolution = [512, 768]
   min_bucket_reso = 256
   max_bucket_reso = 1024
-  batch_size = 1
+  batch_size = 3
 
   [[datasets.subsets]]
   image_dir = '/home/admin/github/showMan/saved/bodre/'
   caption_extension = '.txt'
   class_tokens = 'bodre'
-  num_repeats = 10
+  num_repeats = 4
   shuffle_caption = true
