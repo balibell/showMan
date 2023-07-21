@@ -33,7 +33,7 @@ text_encoder_lr = 1e-4
 multires_noise_iterations = 6
 multires_noise_discount = 0.1
 stop_text_encoder_training = 100
-network_module = "networks.dylora"
+network_module = "networks.lora"
 network_dim = 128
 network_alpha = 128
 #network_args = [ "conv_dim=32", "unit=4", "down_lr_weight=0,0,0,0,0,1.0,1.0,1.0,1.0,1.0,1.0,1.5", "mid_lr_weight=2.0", "up_lr_weight=1.5,1.5,1.5,1.5,1.0,1.0,1.0,0,0,0,0,0", "block_dims=2,4,4,4,8,8,8,8,12,12,12,12,16,12,12,12,12,8,8,8,8,4,4,4,2", "block_alphas=2,2,2,2,4,4,4,4,6,6,6,6,8,6,6,6,6,4,4,4,4,2,2,2,2",]
