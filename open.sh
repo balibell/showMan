@@ -1,8 +1,8 @@
 #!/bin/bash
 
 dir=$1
-num=$2
-genmeta=$3
+genmeta=$2
+num=$3
 remove_level=$4
 
 
