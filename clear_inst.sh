@@ -48,7 +48,6 @@ if [ "$runlocal" = "" ]; then
 
   metadata_path="./${typedir}/${dir}/${METADATA}_${num}.json"
 
-  echo "balibell rm -rf $metadata_path"
   rm -rf $metadata_path
   git add $metadata_path
   git commit -m"remove metadata"
