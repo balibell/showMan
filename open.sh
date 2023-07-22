@@ -162,7 +162,7 @@ function handle_interrupt {
   done;
   cat /dev/null > confirmCropped.txt
 
-  sh show_man.sh '1' "$instprompt" $SAVED $dir $num 0
+  sh show_man.sh '1' '' $SAVED $dir $num 0
 
   git add $CONFIRM_DELETE
   git add $CONFIRM_EDIT_MAP
@@ -184,7 +184,7 @@ function handle_interrupt {
 
 
   if [ $scpmetadata -eq 1 ]; then
-    sh show_man.sh '1' "$instprompt" $SAVED $dir $num 0 remoteonly
+    sh show_man.sh '1' '' $SAVED $dir $num 0 remoteonly
   fi
 }
 
