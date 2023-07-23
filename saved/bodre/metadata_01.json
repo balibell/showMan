@@ -5,7 +5,7 @@
     "prompts_arr": [
       "white_background",
       "simple_background",
-      "scar",
+      "bodre01",
       "fingers"
     ],
     "mtime": 0
@@ -14,11 +14,8 @@
     "file_name": "230722_lwO4nuPh.jpg",
     "img_dir": "selected_01",
     "prompts_arr": [
-      "1girl",
-      "gloves",
-      "realistic",
-      "solo",
-      "close-up"
+      "bodre01",
+      "fingers"
     ],
     "mtime": 0
   }
