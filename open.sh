@@ -57,12 +57,15 @@ if [ -d "$dir" ]; then
     remove_level=1
 
     ssh 44 << remotessh
+    cd /home/admin/github/showMan
     rm -rf $savedirnum/*
     exit
 remotessh
     # 上传到远端
     echo "two dir is same, so do scp"
     scp -r $savedirnum 44:/$remotepath
+
+    exit
   else
     echo "python pyutil/randomName.py $dir 1"
     python pyutil/randomName.py $dir 1
