@@ -1,5 +1,18 @@
 [
   {
+    "file_name": "230724_C5eh860k.jpg",
+    "img_dir": "selected_01",
+    "prompts_arr": [
+      "ruby",
+      "bodre02",
+      "ruby_drop",
+      "drop",
+      "inlaid_with_ruby",
+      "golden_chain"
+    ],
+    "mtime": 0
+  },
+  {
     "file_name": "230724_vkLbbFtZ.png",
     "img_dir": "selected_01",
     "prompts_arr": [
@@ -9,7 +22,9 @@
       "bodre02",
       "jewelry",
       "inlaid_with_emerald",
-      "big_silver_chain"
+      "big_silver_chain",
+      "big_emerald",
+      "silver"
     ],
     "mtime": 0
   },
@@ -19,10 +34,26 @@
     "prompts_arr": [
       "white_background",
       "simple_background",
-      "no_humans",
-      "red_gemstone",
-      "gem",
-      "blood"
+      "ruby",
+      "bodre02",
+      "ruby_drop",
+      "drop",
+      "inlaid_with_ruby",
+      "silver"
+    ],
+    "mtime": 0
+  },
+  {
+    "file_name": "230724_rMdpxUaP.png",
+    "img_dir": "selected_01",
+    "prompts_arr": [
+      "white_background",
+      "simple_background",
+      "ruby",
+      "bodre02",
+      "inlaid_with_ruby",
+      "multi_drop",
+      "silver"
     ],
     "mtime": 0
   },
@@ -36,7 +67,8 @@
       "bodre02",
       "jewelry",
       "inlaid_with_emerald",
-      "big_silver_chain"
+      "big_silver_chain",
+      "silver"
     ],
     "mtime": 0
   },
@@ -50,7 +82,8 @@
       "emerald",
       "bodre02",
       "inlaid_with_emerald",
-      "big_silver_chain"
+      "big_silver_chain",
+      "silver"
     ],
     "mtime": 0
   },
@@ -59,10 +92,13 @@
     "img_dir": "selected_01",
     "prompts_arr": [
       "white_background",
-      "no_humans",
       "simple_background",
       "beads",
-      "gem"
+      "bodre02",
+      "y-necklace",
+      "inlaid_with_ruby",
+      "small_ruby",
+      "golden_link"
     ],
     "mtime": 0
   },
@@ -72,10 +108,12 @@
     "prompts_arr": [
       "white_background",
       "simple_background",
-      "flower",
-      "rose",
-      "no_humans",
-      "red_flower"
+      "ruby",
+      "bodre02",
+      "inlaid_with_ruby",
+      "big_ruby",
+      "big_silver_chain",
+      "silver"
     ],
     "mtime": 0
   }
