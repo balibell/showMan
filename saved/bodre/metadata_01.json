@@ -14,6 +14,19 @@
     "mtime": 0
   },
   {
+    "file_name": "230724_rXUqmPXL.jpg",
+    "img_dir": "selected_01",
+    "prompts_arr": [
+      "white_background",
+      "simple_background",
+      "no_humans",
+      "red_gemstone",
+      "gem",
+      "blood"
+    ],
+    "mtime": 0
+  },
+  {
     "file_name": "230724_Zs9glEX7.png",
     "img_dir": "selected_01",
     "prompts_arr": [
@@ -38,6 +51,31 @@
       "bodre02",
       "inlaid_with_emerald",
       "big_silver_chain"
+    ],
+    "mtime": 0
+  },
+  {
+    "file_name": "230724_A2QpLMWt.jpg",
+    "img_dir": "selected_01",
+    "prompts_arr": [
+      "white_background",
+      "no_humans",
+      "simple_background",
+      "beads",
+      "gem"
+    ],
+    "mtime": 0
+  },
+  {
+    "file_name": "230724_oMcoqHs4.jpg",
+    "img_dir": "selected_01",
+    "prompts_arr": [
+      "white_background",
+      "simple_background",
+      "flower",
+      "rose",
+      "no_humans",
+      "red_flower"
     ],
     "mtime": 0
   }
