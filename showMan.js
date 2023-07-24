@@ -79,7 +79,7 @@ if (doTrim && trimParamArr.length >= 4) {
 } else {
   trimFilterParams[KEY_MIN_RES] = 512*512
   trimFilterParams[KEY_MIN_WH_RATIO] = 0.3
-  trimFilterParams[KEY_MAX_WH_RATIO] = 1.2
+  trimFilterParams[KEY_MAX_WH_RATIO] = 1.32
 }
 
 
