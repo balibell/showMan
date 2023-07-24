@@ -12,6 +12,8 @@ typedir=$4
 runlocal=$5
 
 
+git pull
+
 if [ "$dir" = "" ]; then
   echo "dir cannot be empty!"
   exit 1
