@@ -10,5 +10,5 @@
   image_dir = '/home/admin/github/showMan/saved/bodre/'
   caption_extension = '.txt'
   class_tokens = 'bodre'
-  num_repeats = 20
+  num_repeats = 30
   shuffle_caption = true
