@@ -1,4 +1,4 @@
-pretrained_model_name_or_path = "/home/admin/models/models/BraV5_fp16.safetensors"
+pretrained_model_name_or_path = "/home/admin/models/models/v1-5-pruned-emaonly.safetensors"
 caption_extension = ".txt"
 cache_latents = false
 output_dir = "/home/admin/github/showMan/training/output/bodre_network"
