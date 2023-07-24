@@ -1,5 +1,34 @@
 [
   {
+    "file_name": "230724_od5l7Aje.png",
+    "img_dir": "selected_01",
+    "prompts_arr": [
+      "no_humans",
+      "sky",
+      "cloud",
+      "outdoors",
+      "day",
+      "grass",
+      "castle",
+      "blue_sky"
+    ],
+    "mtime": 0
+  },
+  {
+    "file_name": "230724_duKjMzba.png",
+    "img_dir": "selected_01",
+    "prompts_arr": [
+      "sky",
+      "day",
+      "cloud",
+      "outdoors",
+      "no_humans",
+      "group_people",
+      "dwarfs_and_witch"
+    ],
+    "mtime": 0
+  },
+  {
     "file_name": "230724_Fhm4X1sF.jpeg",
     "img_dir": "selected_01",
     "prompts_arr": [
@@ -9,7 +38,10 @@
       "sky",
       "sand",
       "no_humans",
-      "sand_carving"
+      "sand_carving",
+      "group_people",
+      "dwarfs_and_witch",
+      "sculpture"
     ],
     "mtime": 0
   },
@@ -23,7 +55,10 @@
       "castle",
       "outdoors",
       "blue_sky",
-      "sand_carving"
+      "sand_carving",
+      "sculpture",
+      "statue",
+      "cloud"
     ],
     "mtime": 0
   }
