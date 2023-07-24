@@ -1,4 +1,4 @@
-pretrained_model_name_or_path = "/home/admin/models/models/v1-5-pruned-emaonly.safetensors"
+pretrained_model_name_or_path = "/home/admin/models/models/beautiful_realistic_asians_v6.0.safetensors"
 logging_dir = "/home/admin/github/showMan/training/log/danyanpi_network"
 sample_prompts = "/home/admin/github/showMan/training/danyanpi/prompt.txt"
 dataset_config = "/home/admin/github/showMan/training/danyanpi/dataset_config.toml"
@@ -13,7 +13,7 @@ resolution = "512,512"
 cache_latents = false
 save_every_n_epochs = 5
 sample_every_n_epochs = 5
-train_batch_size = 3
+train_batch_size = 5
 gradient_accumulation_steps = 2
 
 
