@@ -282,7 +282,7 @@ def main_entry(use_image_memery, image_dir, tmp_dir, out_dir, threshold, prompts
   return
 
 
-
+# python trimSameImage.py '' ./duplicate/asiangirl/selected_01/ ./duplicate/asiangirl/selected_01_tmp ./duplicate/asiangirl/selected_01_dup 0.8 1
 # 对单级目录里的图片进行相似度对比，如果是相似图片会 copy 到指定目录 out_dir
 if __name__ == "__main__":
   use_image_memery = bool(sys.argv[1])
