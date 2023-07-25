@@ -12,7 +12,6 @@ mixed_precision = "fp16"
 cache_latents = false
 save_every_n_epochs = 5
 sample_every_n_epochs = 5
-train_batch_size = 15
 gradient_accumulation_steps = 2
 network_train_unet_only = true
 network_train_text_encoder_only = false
