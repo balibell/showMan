@@ -12,3 +12,11 @@
   class_tokens = 'danyanpi'
   num_repeats = 10
   shuffle_caption = true
+
+  [[datasets.subsets]]
+  image_dir = '/home/admin/github/class/bra_girl_512_682'
+  is_reg = true
+  class_tokens = 'girl'
+  caption_extension = '.txt'
+  num_repeats = 1
+  shuffle_caption = false
