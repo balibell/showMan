@@ -11,4 +11,4 @@
   caption_extension = '.txt'
   class_tokens = '${INSTANCE}'
   num_repeats = 10
-  shuffle_caption = true
+  shuffle_caption = false

@@ -83,3 +83,19 @@ network_alpha = 16
 
 ## lycoris训练参数示例（不完整示例）
 `network_args = [ "algo=loha", "conv_dim=32", "conv_alpha=16", "unit=4", ]`
+
+
+
+## 正则图片，目前已有女性正则大约400张，文件地址：
+`/home/admin/github/class/bra_girl_512_682`
+
+## 如何使用？只需要将正则图片目录作为 subsets 加入到 datasets 即可，num_repeats = 1
+```
+[[datasets.subsets]]
+  image_dir = '/home/admin/github/class/bra_girl_512_682'
+  is_reg = true
+  class_tokens = 'girl'
+  caption_extension = '.txt'
+  num_repeats = 1
+  shuffle_caption = false
+```
