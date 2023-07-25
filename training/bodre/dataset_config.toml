@@ -7,8 +7,8 @@
   batch_size = 10
 
   [[datasets.subsets]]
-  image_dir = '/home/admin/github/showMan/saved/bodre/'
+  image_dir = '/home/admin/github/showMan/saved/bodre/selected_01'
   caption_extension = '.txt'
   class_tokens = 'bodre'
-  num_repeats = 30
+  num_repeats = 40
   shuffle_caption = true
