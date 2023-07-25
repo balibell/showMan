@@ -7,7 +7,7 @@ save_precision = "fp16"
 save_model_as = "safetensors"
 save_every_n_epochs = 5
 sample_every_n_epochs = 5
-train_batch_size = 10
+train_batch_size = 1
 
 
 seed = 1234
