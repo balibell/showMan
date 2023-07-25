@@ -10,20 +10,20 @@
   image_dir = '/home/admin/github/showMan/saved/bodre/'
   caption_extension = '.txt'
   class_tokens = 'bodre'
-  num_repeats = 10
+  num_repeats = 40
   shuffle_caption = false
 
-[[datasets]]
-  enable_bucket = true
-  resolution = [768, 768]
-  bucket_no_upscale = true
-  min_bucket_reso = 256
-  max_bucket_reso = 1024
-  batch_size = 4
+# [[datasets]]
+#   enable_bucket = true
+#   resolution = [768, 768]
+#   bucket_no_upscale = true
+#   min_bucket_reso = 256
+#   max_bucket_reso = 1024
+#   batch_size = 4
 
-  [[datasets.subsets]]
-  image_dir = '/home/admin/github/showMan/saved/bodre/'
-  caption_extension = '.txt'
-  class_tokens = 'bodre'
-  num_repeats = 10
-  shuffle_caption = false
+#   [[datasets.subsets]]
+#   image_dir = '/home/admin/github/showMan/saved/bodre/'
+#   caption_extension = '.txt'
+#   class_tokens = 'bodre'
+#   num_repeats = 10
+#   shuffle_caption = false
