@@ -7,7 +7,7 @@
   batch_size = 10
 
   [[datasets.subsets]]
-  image_dir = '/home/admin/github/showMan/saved/bodre/selected_01'
+  image_dir = '/home/admin/github/showMan/saved/bodre/selected_02'
   caption_extension = '.txt'
   class_tokens = 'bodre'
   num_repeats = 40
