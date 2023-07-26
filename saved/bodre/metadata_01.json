@@ -12,6 +12,24 @@
     "mtime": 0
   },
   {
+    "file_name": "230726_QzmgNfUl.jpeg",
+    "img_dir": "selected_01",
+    "prompts_arr": [
+      "solo",
+      "upper_body",
+      "robot",
+      "blue_background",
+      "blue_eyes",
+      "power_armor",
+      "armor",
+      "armor_chestpiece",
+      "blue_armor",
+      "white_shoulder_with_golden_rim",
+      "white_gauntlets_with_golden_rim"
+    ],
+    "mtime": 0
+  },
+  {
     "file_name": "230726_CK9BHkDx.jpeg",
     "img_dir": "selected_01",
     "prompts_arr": [
@@ -20,8 +38,10 @@
       "robot",
       "armor",
       "armor_chestpiece",
-      "porcelain_printed",
-      "flower_pattern_printed"
+      "red_armor",
+      "black_background",
+      "white_eyes",
+      "golden_mask"
     ],
     "mtime": 0
   },
