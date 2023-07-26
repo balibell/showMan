@@ -4,7 +4,8 @@
     "img_dir": "selected_01",
     "prompts_arr": [
       "blue_floral_motifs",
-      "flower_pattern"
+      "flower_pattern",
+      "white_armor"
     ],
     "mtime": 0
   },
@@ -51,7 +52,8 @@
     "img_dir": "selected_01",
     "prompts_arr": [
       "blue_floral_motifs",
-      "flower_pattern"
+      "flower_pattern",
+      "white_armor"
     ],
     "mtime": 0
   }
