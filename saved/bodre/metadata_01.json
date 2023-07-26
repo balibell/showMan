@@ -21,7 +21,8 @@
       "glowing_eyes",
       "scrapes",
       "red_armor",
-      "word_print_on_chest"
+      "word_print_on_chest",
+      "power_cells"
     ],
     "mtime": 0
   },
@@ -39,7 +40,9 @@
       "blue_armor",
       "white_sholder",
       "golden_rim",
-      "no_blue_floral_motifs"
+      "no_blue_floral_motifs",
+      "power_cells",
+      "mech_suit_folds"
     ],
     "mtime": 0
   },
