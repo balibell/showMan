@@ -3,12 +3,25 @@
     "file_name": "230726_4HdPCI9e.jpeg",
     "img_dir": "selected_01",
     "prompts_arr": [
-      "white_background",
-      "simple_background",
       "bottle",
       "jar",
       "porcelain_printed",
-      "printed"
+      "printed",
+      "flower_pattern"
+    ],
+    "mtime": 0
+  },
+  {
+    "file_name": "230726_CK9BHkDx.jpeg",
+    "img_dir": "selected_01",
+    "prompts_arr": [
+      "power_armor",
+      "upper_body",
+      "robot",
+      "armor",
+      "armor_chestpiece",
+      "porcelain_printed",
+      "flower_pattern_printed"
     ],
     "mtime": 0
   },
@@ -16,26 +29,11 @@
     "file_name": "230726_sBCluKaW.jpg",
     "img_dir": "selected_01",
     "prompts_arr": [
-      "gradient_background",
-      "blue_background",
       "porcelain_printed",
       "printed",
       "bottle",
-      "jar"
-    ],
-    "mtime": 0
-  },
-  {
-    "file_name": "230726_hIUHkCoP.jpg",
-    "img_dir": "selected_01",
-    "prompts_arr": [
-      "solo",
-      "power_armor",
-      "upper_body",
-      "robot",
-      "armor",
-      "armor_chestpiece",
-      "porcelain_printed"
+      "jar",
+      "flower_pattern"
     ],
     "mtime": 0
   }
