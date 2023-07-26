@@ -3,8 +3,7 @@
     "file_name": "230726_4HdPCI9e.jpeg",
     "img_dir": "selected_01",
     "prompts_arr": [
-      "porcelain_printed",
-      "printed",
+      "blue_floral_motifs",
       "flower_pattern"
     ],
     "mtime": 0
@@ -23,7 +22,8 @@
       "armor_chestpiece",
       "blue_armor",
       "white_sholder",
-      "golden_rim"
+      "golden_rim",
+      "no_blue_floral_motifs"
     ],
     "mtime": 0
   },
@@ -31,8 +31,7 @@
     "file_name": "230726_sBCluKaW.jpg",
     "img_dir": "selected_01",
     "prompts_arr": [
-      "porcelain_printed",
-      "printed",
+      "blue_floral_motifs",
       "flower_pattern"
     ],
     "mtime": 0
