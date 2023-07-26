@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "file_name": "230726_hIUHkCoP.jpg",
+    "img_dir": "selected_01",
+    "prompts_arr": [
+      "solo",
+      "male_focus",
+      "1boy",
+      "power_armor",
+      "upper_body",
+      "glowing",
+      "robot",
+      "armor",
+      "science_fiction"
+    ],
+    "mtime": 0
+  }
+]
