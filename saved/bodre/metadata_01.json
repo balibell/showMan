@@ -1,17 +1,41 @@
 [
   {
+    "file_name": "230726_4HdPCI9e.jpeg",
+    "img_dir": "selected_01",
+    "prompts_arr": [
+      "white_background",
+      "simple_background",
+      "bottle",
+      "jar",
+      "porcelain_printed",
+      "printed"
+    ],
+    "mtime": 0
+  },
+  {
+    "file_name": "230726_sBCluKaW.jpg",
+    "img_dir": "selected_01",
+    "prompts_arr": [
+      "gradient_background",
+      "blue_background",
+      "porcelain_printed",
+      "printed",
+      "bottle",
+      "jar"
+    ],
+    "mtime": 0
+  },
+  {
     "file_name": "230726_hIUHkCoP.jpg",
     "img_dir": "selected_01",
     "prompts_arr": [
       "solo",
-      "male_focus",
-      "1boy",
       "power_armor",
       "upper_body",
-      "glowing",
       "robot",
       "armor",
-      "science_fiction"
+      "armor_chestpiece",
+      "porcelain_printed"
     ],
     "mtime": 0
   }
