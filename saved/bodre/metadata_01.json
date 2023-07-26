@@ -9,10 +9,26 @@
     "mtime": 0
   },
   {
+    "file_name": "230726_mpYuLIVv.jpeg",
+    "img_dir": "selected_01",
+    "prompts_arr": [
+      "power_armor",
+      "upper_body",
+      "black_background",
+      "glowing",
+      "simple_background",
+      "robot",
+      "glowing_eyes",
+      "scrapes",
+      "red_armor",
+      "word_print_on_chest"
+    ],
+    "mtime": 0
+  },
+  {
     "file_name": "230726_QzmgNfUl.jpeg",
     "img_dir": "selected_01",
     "prompts_arr": [
-      "solo",
       "upper_body",
       "robot",
       "blue_background",
