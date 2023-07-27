@@ -38,7 +38,7 @@
 
 ## optimizer 取值
 optimizer_type = "AdamW8bit"
-optimizer_type = "DAaptation"
+optimizer_type = "DAdaptation"
 
 ## network_module 取值
 networks.lora

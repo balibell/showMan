@@ -3,19 +3,13 @@
 
 
 instancename=$1
-nohup=$2
-trainer=$3
+trainer=$2
 
 if [ "$instancename" = "" ]; then
   echo "instancename must not be empty!"
   exit
 fi
 
-nohupsuf=
-if [ "$nohup" != "" ]; then
-  nohup="nohup"
-  nohupsuf="&"
-fi
 
 if [ "$trainer" = "" ]; then
 trainer="train_network.py"
@@ -66,8 +60,8 @@ rm -rf $modelpath/*
 conda activate dbtrain
 cd /home/admin/github/showMan/
 git pull
-echo "$nohup sh training/start_train.sh $instancename $trainer $nohupsuf"
-$nohup sh training/start_train.sh $instancename $trainer $nohupsuf
+echo "sh training/start_train.sh $instancename $trainer"
+sh training/start_train.sh $instancename $trainer
 exit
 remotessh
 
