@@ -1,4 +1,4 @@
-pretrained_model_name_or_path = "/home/admin/models/models/v1-5-pruned-emaonly.safetensors"
+pretrained_model_name_or_path = "/root/models/models/sdXL_v10.safetensors"
 logging_dir = "/home/admin/github/showMan/training/log/danyanpi_network"
 sample_prompts = "/home/admin/github/showMan/training/danyanpi/prompt.txt"
 dataset_config = "/home/admin/github/showMan/training/danyanpi/dataset_config.toml"
