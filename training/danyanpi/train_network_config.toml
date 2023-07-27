@@ -1,4 +1,4 @@
-pretrained_model_name_or_path = "//home/admin/models/duitang/beautiful_realistic_asians_v6.0.safetensors"
+pretrained_model_name_or_path = "/home/admin/models/models/v1-5-pruned-emaonly.safetensors"
 logging_dir = "/home/admin/github/showMan/training/log/danyanpi_network"
 sample_prompts = "/home/admin/github/showMan/training/danyanpi/prompt.txt"
 dataset_config = "/home/admin/github/showMan/training/danyanpi/dataset_config.toml"
