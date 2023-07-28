@@ -14,7 +14,8 @@ cache_latents = false
 save_every_n_epochs = 1
 sample_every_n_epochs = 1
 gradient_accumulation_steps = 1
-
+network_train_unet_only = false
+network_train_text_encoder_only = false
 
 seed = 1234
 max_token_length = 225
