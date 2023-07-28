@@ -31,9 +31,8 @@ unet_lr = 1.8e-4
 text_encoder_lr = 4e-5
 # multires_noise_iterations = 6
 # multires_noise_discount = 0.1
-network_module = "networks.lora"
-network_dim = 128
-network_alpha = 32
-#network_args = [ "conv_dim=32", "unit=4", "down_lr_weight=1,0.2,1,1,0.2,1,1,0.2,1,1,1,1", "mid_lr_weight=1", "up_lr_weight=1,1,1,1,1,1,1,1,1,1,1,1", "block_dims=32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32", "block_alphas=4,4,8,4,8,8,8,4,4,8,8,8  ,4,  8,4,8,4,4,4,8,4,4,4,8,4", "conv_block_dims=8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8", "conv_block_alpha=1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1",]
-
+network_module = "networks.dylora"
+network_dim = 32
+network_alpha = 1
+network_args = [ "conv_dim=32", "unit=4", "down_lr_weight=1,0.2,1,1,0.2,1,1,0.2,1,1,1,1", "mid_lr_weight=1", "up_lr_weight=1,1,1,1,1,1,1,1,1,1,1,1", "block_dims=32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32", "block_alphas=4,4,8,4,8,8,8,4,4,8,8,8  ,4,  8,4,8,4,4,4,8,4,4,4,8,4", "conv_block_dims=8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8", "conv_block_alpha=1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1",]
 
