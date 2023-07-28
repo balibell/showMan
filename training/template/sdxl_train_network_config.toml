@@ -1,9 +1,9 @@
 pretrained_model_name_or_path = "/root/models/models/sdXL_v10.safetensors"
-logging_dir = "/home/admin/github/showMan/training/log/danyanpi_network"
-sample_prompts = "/home/admin/github/showMan/training/danyanpi/prompt.txt"
-dataset_config = "/home/admin/github/showMan/training/danyanpi/dataset_config.toml"
-output_dir = "/home/admin/github/showMan/training/output/danyanpi_network"
-output_name = "danyanpi"
+logging_dir = "/home/admin/github/showMan/training/log/sdxl_${INSTANCE}_network"
+sample_prompts = "/home/admin/github/showMan/training/${INSTANCE}/prompt.txt"
+dataset_config = "/home/admin/github/showMan/training/${INSTANCE}/sdxl_dataset_config.toml"
+output_dir = "/home/admin/github/showMan/training/output/sdxl_${INSTANCE}_network"
+output_name = "${INSTANCE}"
 save_model_as = "safetensors"
 caption_extension = ".txt"
 xformers = true
@@ -19,7 +19,7 @@ network_train_text_encoder_only = false
 
 
 seed = 1234
-max_token_length = 225
+max_token_length = 75
 max_train_epochs = 100
 persistent_data_loader_workers = true
 gradient_checkpointing = true
@@ -31,6 +31,8 @@ lr_scheduler_num_cycles = 0
 learning_rate = 4e-4
 unet_lr = 4e-4
 text_encoder_lr = 4e-4
+multires_noise_iterations = 8
+multires_noise_discount = 0.2
 stop_text_encoder_training = 2000
 network_module = "networks.lora"
 network_dim = 256

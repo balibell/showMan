@@ -9,7 +9,6 @@ caption_extension = ".txt"
 xformers = true
 save_precision = "fp16"
 mixed_precision = "fp16"
-resolution = "512,512"
 cache_latents = true
 save_every_n_epochs = 5
 sample_every_n_epochs = 5
@@ -20,7 +19,7 @@ network_train_text_encoder_only = false
 
 seed = 1234
 clip_skip = 1
-max_token_length = 225
+max_token_length = 75
 max_train_epochs = 100
 persistent_data_loader_workers = true
 gradient_checkpointing = true
