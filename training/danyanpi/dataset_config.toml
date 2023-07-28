@@ -4,22 +4,22 @@
   bucket_no_upscale = true
   min_bucket_reso = 512
   max_bucket_reso = 1024
-  batch_size = 15
+  batch_size = 1
 
   [[datasets.subsets]]
   image_dir = '/home/admin/github/showMan/saved/danyanpi/selected_01'
   caption_extension = '.txt'
   class_tokens = 'danyanpi'
-  num_repeats = 10
+  num_repeats = 30
   shuffle_caption = true
 
-  [[datasets.subsets]]
-  image_dir = '/home/admin/github/class/sd_girl_512_682_400'
-  is_reg = true
-  class_tokens = 'girl'
-  caption_extension = '.txt'
-  num_repeats = 1
-  shuffle_caption = false
+  # [[datasets.subsets]]
+  # image_dir = '/home/admin/github/class/sd_girl_512_682_400'
+  # is_reg = true
+  # class_tokens = 'girl'
+  # caption_extension = '.txt'
+  # num_repeats = 1
+  # shuffle_caption = false
 
 
 
