@@ -36,7 +36,6 @@ stop_text_encoder_training = 2000
 network_module = "lycoris.kohya"
 network_dim = 64
 network_alpha = 16
-network_args = [ "algo=loha", "conv_dim=64", "conv_alpha=16", "unit=4", ]
-
+network_args = [ "algo=loha", "conv_dim=64", "conv_alpha=16", "unit=4", "down_lr_weight=1,0.2,1,1,0.2,1,1,0.2,1,1,1,1", "mid_lr_weight=1", "up_lr_weight=1,1,1,1,1,1,1,1,1,1,1,1", "block_dims=64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64,64", "block_alphas=4,4,8,4,8,8,8,4,4,8,8,8  ,4,  8,4,8,4,4,4,8,4,4,4,8,4", "conv_block_dims=8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8", "conv_block_alpha=1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1",]
 
 
