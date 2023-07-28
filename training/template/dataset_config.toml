@@ -4,6 +4,7 @@
   bucket_no_upscale = true
   min_bucket_reso = 256
   max_bucket_reso = 1024
+  bucket_reso_steps = 64
   batch_size = 3
 
   [[datasets.subsets]]
