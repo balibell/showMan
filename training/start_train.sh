@@ -8,7 +8,7 @@ dirname=
 if [ "$trainer" = "fine_tune.py" ]; then
   configfile='train_finetune_config.toml'
   dirname="${instancename}_finetune"
-elif [ "$trainer" = "train_network.py" ]; then
+elif [ "$trainer" = "train_network.py" ] || [ "$trainer" = "sdxl_train_network.py" ]; then
   configfile='train_network_config.toml'
   dirname="${instancename}_network"
 else
