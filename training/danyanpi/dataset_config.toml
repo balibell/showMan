@@ -7,7 +7,7 @@
   batch_size = 1
 
   [[datasets.subsets]]
-  image_dir = '/home/admin/github/showMan/saved/danyanpi/'
+  image_dir = '/home/admin/github/showMan/saved/danyanpi/selected_02'
   caption_extension = '.txt'
   class_tokens = 'danyanpi'
   num_repeats = 10
