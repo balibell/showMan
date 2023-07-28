@@ -4,7 +4,7 @@
   bucket_no_upscale = true
   min_bucket_reso = 512
   max_bucket_reso = 1024
-  batch_size = 1
+  batch_size = 7
 
   [[datasets.subsets]]
   image_dir = '/home/admin/github/showMan/saved/danyanpi/selected_01'
