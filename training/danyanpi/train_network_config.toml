@@ -13,6 +13,8 @@ cache_latents = false
 save_every_n_epochs = 1
 sample_every_n_epochs = 1
 gradient_accumulation_steps = 1
+network_train_unet_only = false
+network_train_text_encoder_only = false
 
 
 seed = 1234
@@ -28,7 +30,7 @@ lr_warmup_steps = 0
 lr_scheduler_num_cycles = 0
 learning_rate = 1.8e-4
 unet_lr = 1.8e-4
-text_encoder_lr = 4e-5
+text_encoder_lr = 2e-5
 # multires_noise_iterations = 6
 # multires_noise_discount = 0.1
 network_module = "networks.lora"
