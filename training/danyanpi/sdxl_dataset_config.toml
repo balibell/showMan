@@ -4,14 +4,15 @@
   bucket_no_upscale = true
   min_bucket_reso = 512
   max_bucket_reso = 1024
+  bucket_reso_steps = 16
   batch_size = 1
 
   [[datasets.subsets]]
-  image_dir = '/home/admin/github/showMan/saved/danyanpi/selected_02'
+  image_dir = '/home/admin/github/showMan/saved/danyanpi/selected_01'
   caption_extension = '.txt'
   class_tokens = 'danyanpi'
   num_repeats = 30
-  shuffle_caption = true
+  shuffle_caption = false
 
 
 
