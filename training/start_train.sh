@@ -32,6 +32,7 @@ mkdir -p $logdir
 # 创建输出目录
 mkdir -p $outputdir
 
+echo "=============================== rm -rf $logdir/*"
 rm -rf $logdir/*
 rm -rf $outputdir/*
 

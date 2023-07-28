@@ -29,6 +29,8 @@ if [ "$trainer" = "fine_tune.py" ]; then
   dirname="${dirname}_finetune"
 elif [ "$trainer" = "train_network.py" ]; then
   dirname="${dirname}_network"
+elif [ "$trainer" = "sdxl_train_network.py" ]; then
+  dirname="sdxl_${dirname}_network"
 else
   dirname="${dirname}_db"
 fi
