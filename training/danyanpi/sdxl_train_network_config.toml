@@ -13,13 +13,13 @@ mixed_precision = "fp16"
 cache_latents = false
 save_every_n_epochs = 1
 sample_every_n_epochs = 1
-gradient_accumulation_steps = 1
+gradient_accumulation_steps = 12
 network_train_unet_only = false
 network_train_text_encoder_only = false
 
 seed = 1234
-max_token_length = 225
-max_train_epochs = 100
+max_token_length = 75
+max_train_epochs = 10
 persistent_data_loader_workers = true
 gradient_checkpointing = true
 sample_sampler = "euler_a"
