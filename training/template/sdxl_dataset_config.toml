@@ -4,8 +4,9 @@
   bucket_no_upscale = true
   min_bucket_reso = 256
   max_bucket_reso = 1024
-  bucket_reso_steps = 16
-  batch_size = 3
+  # sdxl 此值需要是 32 倍数
+  bucket_reso_steps = 32
+  batch_size = 1
 
   [[datasets.subsets]]
   image_dir = '/home/admin/github/showMan/saved/${INSTANCE}/'
