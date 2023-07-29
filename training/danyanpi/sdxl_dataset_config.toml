@@ -6,7 +6,7 @@
   max_bucket_reso = 1024
   # sdxl 此值需要是 32 倍数
   bucket_reso_steps = 32
-  batch_size = 1
+  batch_size = 3
 
   [[datasets.subsets]]
   image_dir = '/home/admin/github/showMan/saved/danyanpi/selected_01'

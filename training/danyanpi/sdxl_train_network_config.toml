@@ -7,9 +7,9 @@ output_name = "danyanpi"
 save_model_as = "safetensors"
 caption_extension = ".txt"
 xformers = true
-no_half_vae = true
-save_precision = "bf16"
-mixed_precision = "bf16"
+no_half_vae = false
+save_precision = "fp16"
+mixed_precision = "fp16"
 cache_latents = false
 save_every_n_epochs = 1
 sample_every_n_epochs = 1
@@ -35,7 +35,7 @@ multires_noise_discount = 0.2
 stop_text_encoder_training = 2000
 network_module = "lycoris.kohya"
 network_dim = 64
-network_alpha = 1
-network_args = [ "algo=loha", "conv_dim=64", "conv_alpha=1", "unit=4" ]
+network_alpha = 16
+network_args = [ "algo=loha", "conv_dim=64", "conv_alpha=16", "unit=4" ]
 
 
